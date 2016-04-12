@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="<%= newhistorics_page_class(true) %>">
+<head>
+  <title>New Historics | Custom Built Porsches</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="">
+
+<%= render 'layouts/header' %>
+
+<%= yield %>
+
+<%= render 'layouts/footer' %>
+
+</body>
+</html>
