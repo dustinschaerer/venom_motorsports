@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories
   resources :build_images
   resources :barn_finds
   resources :builds, path: "custom-builds-porsche"
