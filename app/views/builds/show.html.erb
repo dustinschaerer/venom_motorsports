@@ -21,9 +21,8 @@
           <%= @build.content.html_safe %>
         </p>
 
-
+        <% unless @build_images.empty?  %>
         <h3>Image Carousel</h3>
-
         <div class="well">
             <div id="myCarousel" class="carousel slide">
 
@@ -53,6 +52,7 @@
             <!--/myCarousel-->
         </div>
         <!--/well-->
+        <% end %>
 
         <p>
           <strong>Date published:</strong>

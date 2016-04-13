@@ -25,12 +25,13 @@
   </div>
 <br>
 <div class="well">
+  <h4>Carousel Images</h4>
 <div class="row">
 
   <%= f.simple_fields_for :build_images do |builder| %>
     <%= render 'build_image_fields', f: builder %>
   <% end %>
-  <%= link_to_add_fields "Add Another File", f, :build_images %>
+  <%= link_to_add_fields "Add Image Uploader", f, :build_images %>
 </div>
 </div>
 
