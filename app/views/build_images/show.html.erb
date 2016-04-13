@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Build:</strong>
+  <%= @build_image.build %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @build_image.image %>
+</p>
+
+<%= link_to 'Edit', edit_build_image_path(@build_image) %> |
+<%= link_to 'Back', build_images_path %>

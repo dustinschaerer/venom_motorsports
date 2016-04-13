@@ -1,19 +1,39 @@
 <%= simple_form_for(@build) do |f| %>
 
   <%= f.error_notification %>
+
   <div class="field">
     <%= f.input :title %>
   </div>
+<div class="well">
+  <%= f.label :article_image, "Current Image" %>
+  <%= image_tag(@build.article_image_url, class: "img-responsive img-thumbnail") if @build.article_image? %>
+
   <div class="field">
+    <%= f.input :article_image, as: :file, label: "Choose Article Image" %>
+  </div>
+  <%= f.hidden_field :article_image_cache %>
+ </div>
+  <div class="field">
+    <%= f.label :content, "Article Content" %>
     <%= f.trix_editor :content %>
   </div>
+  <br>
   <div class="field">
-    Teaser Content
+    <%= f.label :content, "Teaser Content" %>
     <%= f.trix_editor :teaser %>
   </div>
-  <div class="field">
-    <%= f.input :article_image, as: :file %>
-  </div>
+<br>
+<div class="well">
+<div class="row">
+
+  <%= f.simple_fields_for :build_images do |builder| %>
+    <%= render 'build_image_fields', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Another File", f, :build_images %>
+</div>
+</div>
+
   <div class="field">
     <%= f.input :date_published, as: :date %>
   </div>
@@ -26,7 +46,6 @@
   <div class="field">
     <%= f.input :slug %>
   </div>
-  <br>
   <br>
   <div class="actions">
     <%= f.button :submit, class: "btn btn-primary" %>

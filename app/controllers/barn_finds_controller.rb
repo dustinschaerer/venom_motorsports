@@ -7,7 +7,8 @@ class BarnFindsController < InheritedResources::Base
     end
 
     def barn_find_params
-      params.require(:barn_find).permit(:title, :content, :teaser, :date_published, :published, :admin_user_id, :slug, :article_image)
+      params.require(:barn_find).permit(:title, :content, :teaser, :date_published,
+        :published, :admin_user_id, :slug, :article_image, {supporting_images: []})
     end
 end
 

@@ -5,6 +5,9 @@
     <%= f.input :title %>
   </div>
   <div class="field">
+    <%= f.input :article_image, as: :file %>
+  </div>
+  <div class="field">
     <b>Content</b>
     <%= f.trix_editor :content %>
   </div>
@@ -12,9 +15,11 @@
     <b>Teaser Content</b>
     <%= f.trix_editor :teaser %>
   </div>
-  <div class="field">
-    <%= f.input :article_image, as: :file %>
+
+  <!-- <div class="field">
+    <%= f.input :supporting_images, as: :file, :input_html => { :multiple => true } %>
   </div>
+ -->
 
   <div class="field">
     <%= f.input :date_published, as: :date %>

@@ -3,4 +3,5 @@ class BarnFind < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug, use: :slugged
   mount_uploader :article_image, ArticleImageUploader
+  # mount_uploaders :supporting_images, ArticleImageUploader
 end

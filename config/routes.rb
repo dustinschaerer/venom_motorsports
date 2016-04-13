@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :build_images
   resources :barn_finds
   resources :builds, path: "custom-builds-porsche"
   devise_for :admin_users, ActiveAdmin::Devise.config

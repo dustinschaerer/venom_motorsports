@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411212236) do
+ActiveRecord::Schema.define(version: 20160412221239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,13 +56,23 @@ ActiveRecord::Schema.define(version: 20160411212236) do
     t.boolean  "published"
     t.integer  "admin_user_id"
     t.string   "slug"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.text     "teaser"
     t.string   "article_image"
+    t.json     "supporting_images"
   end
 
   add_index "barn_finds", ["admin_user_id"], name: "index_barn_finds_on_admin_user_id", using: :btree
+
+  create_table "build_images", force: :cascade do |t|
+    t.integer  "build_id"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "build_images", ["build_id"], name: "index_build_images_on_build_id", using: :btree
 
   create_table "builds", force: :cascade do |t|
     t.string   "title"
@@ -93,5 +103,6 @@ ActiveRecord::Schema.define(version: 20160411212236) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   add_foreign_key "barn_finds", "admin_users"
+  add_foreign_key "build_images", "builds"
   add_foreign_key "builds", "admin_users"
 end
