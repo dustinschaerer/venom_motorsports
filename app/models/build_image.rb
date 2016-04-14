@@ -1,4 +1,4 @@
 class BuildImage < ActiveRecord::Base
-  belongs_to :build
+  belongs_to :post
   mount_uploader :image, ArticleImageUploader
 end

@@ -1,3 +1,23 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html.categories a.remove_fields {
+  margin-top: 12px;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+html.categories a.add_fields {
+  margin-top: 38px;
+  font-size: 18px;
+  color: white;
+  margin-left: 15px;
+}
+html.categories a {
+  color: black;
+}
+html.categories a.btn {
+  color: white;
+}
+

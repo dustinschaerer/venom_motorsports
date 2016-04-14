@@ -1,0 +1,44 @@
+<%= simple_form_for(@post, :html => { :multipart => true }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :category %>
+    <%= f.input :title %>
+    <div class="well">
+  <%= f.label :article_image, "Current Image" %>
+  <%= image_tag(@post.article_image_url, class: "img-responsive img-thumbnail") if @post.article_image? %>
+
+  <div class="field">
+    <%= f.input :article_image, as: :file, label: "Choose Article Image" %>
+  </div>
+  <%= f.hidden_field :article_image_cache %>
+ </div>
+    <%= f.label :content, "Content" %>
+    <%= f.trix_editor :content %>
+    <br>
+    <%= f.label :teaser, "Teaser Content" %>
+    <%= f.trix_editor :teaser %>
+    <br>
+    <div class="well">
+      <h4>Carousel Images</h4>
+      <div class="row">
+
+        <%= f.simple_fields_for :build_images do |builder| %>
+          <%= render 'build_image_fields', f: builder %>
+        <% end %>
+        <%= link_to_add_fields "Add Image Uploader", f, :build_images %>
+      </div>
+    </div>
+
+
+    <%= f.input :slug %>
+    <%= f.input :published_on %>
+    <%= f.input :published %>
+    <%= f.association :admin_user, collection: AdminUser.all %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-success" %>
+  </div>
+  <br>
+<% end %>

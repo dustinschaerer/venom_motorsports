@@ -5,6 +5,7 @@
   <div class="field">
     <%= f.input :title %>
   </div>
+
 <div class="well">
   <%= f.label :article_image, "Current Image" %>
   <%= image_tag(@build.article_image_url, class: "img-responsive img-thumbnail") if @build.article_image? %>
@@ -20,19 +21,19 @@
   </div>
   <br>
   <div class="field">
-    <%= f.label :content, "Teaser Content" %>
+    <%= f.label :teaser, "Teaser Content" %>
     <%= f.trix_editor :teaser %>
   </div>
 <br>
 <div class="well">
   <h4>Carousel Images</h4>
-<div class="row">
+  <div class="row">
 
-  <%= f.simple_fields_for :build_images do |builder| %>
-    <%= render 'build_image_fields', f: builder %>
-  <% end %>
-  <%= link_to_add_fields "Add Image Uploader", f, :build_images %>
-</div>
+    <%= f.simple_fields_for :build_images do |builder| %>
+      <%= render 'build_image_fields', f: builder %>
+    <% end %>
+    <%= link_to_add_fields "Add Image Uploader", f, :build_images %>
+  </div>
 </div>
 
   <div class="field">

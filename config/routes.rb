@@ -1,20 +1,26 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
+  match 'parts_list' => 'static_pages#parts_list', via: :get
+  match 'contact' => 'static_pages#contact', via: :get
+  # match 'engine_building'=> 'static_pages#engine_building', via: :get
+  match 'rsr_engine_build'=> 'static_pages#rsr_engine_build', via: :get
+  resources :posts, :path => "projects" do
+  end
+  resources :categories, :path => "" do
+  end
 
-  resources :categories
+
+
   resources :build_images
-  resources :barn_finds
-  resources :builds, path: "custom-builds-porsche"
+  # resources :barn_finds
+  # resources :builds, path: "custom-builds-porsche"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  root 'static_pages#home'
-  match 'parts_list' => 'static_pages#parts_list', via: :get
-  match 'contact' => 'static_pages#contact', via: :get
-  match 'engine_building'=> 'static_pages#engine_building', via: :get
-  match 'rsr_engine_build'=> 'static_pages#rsr_engine_build', via: :get
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

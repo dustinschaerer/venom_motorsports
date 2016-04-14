@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413171049) do
+ActiveRecord::Schema.define(version: 20160413214356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,13 +66,13 @@ ActiveRecord::Schema.define(version: 20160413171049) do
   add_index "barn_finds", ["admin_user_id"], name: "index_barn_finds_on_admin_user_id", using: :btree
 
   create_table "build_images", force: :cascade do |t|
-    t.integer  "build_id"
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "post_id"
   end
 
-  add_index "build_images", ["build_id"], name: "index_build_images_on_build_id", using: :btree
+  add_index "build_images", ["post_id"], name: "index_build_images_on_post_id", using: :btree
 
   create_table "builds", force: :cascade do |t|
     t.string   "title"
@@ -110,7 +110,26 @@ ActiveRecord::Schema.define(version: 20160413171049) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "posts", force: :cascade do |t|
+    t.integer  "category_id"
+    t.string   "title"
+    t.text     "content"
+    t.text     "teaser"
+    t.string   "slug"
+    t.date     "published_on"
+    t.boolean  "published"
+    t.integer  "admin_user_id"
+    t.string   "article_image"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "posts", ["admin_user_id"], name: "index_posts_on_admin_user_id", using: :btree
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+
   add_foreign_key "barn_finds", "admin_users"
-  add_foreign_key "build_images", "builds"
+  add_foreign_key "build_images", "posts"
   add_foreign_key "builds", "admin_users"
+  add_foreign_key "posts", "admin_users"
+  add_foreign_key "posts", "categories"
 end

@@ -1,4 +1,3 @@
-
 class BuildsController < ApplicationController
   before_action :set_build, only: [:show, :edit, :update, :destroy]
 
