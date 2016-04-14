@@ -27,9 +27,12 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
 
-        # params[:build_images_attributes]['image'].each do |i|
-        #   @build_image = @post.build_images.create!(:image => i, post_id: @post.id)
-        # end
+        if params[:build_images_attributes]
+          params[:build_images_attributes]['image'].each do |i|
+            # @build_image = @post.build_images.create!(:image => i, post_id: @post.id)
+            @build_image = @post.build_images.create!(:image => i)
+          end
+        end
 
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
@@ -39,10 +42,15 @@ class PostsController < ApplicationController
   end
 
   def update
-    # raise params.inspect
-
     respond_to do |format|
       if @post.update(post_params)
+        if params[:build_images_attributes]
+          params[:build_images_attributes]['image'].each do |i|
+            # @build_image = @post.build_images.create!(:image => i, post_id: @post.id)
+            @build_image = @post.build_images.create!(:image => i)
+          end
+        end
+
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
       else
         format.html { render :edit }
@@ -65,7 +73,8 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:category_id, :title, :content, :teaser, :slug, :published_on, :published, :admin_user_id, :article_image, build_images_attributes: [:id, :image, :post_id])
+      params.require(:post).permit(:category_id, :title, :content, :teaser, :slug, :published_on, :published, :admin_user_id,
+       :article_image, :article_image_cache, build_images_attributes: [:id, :image, :post_id, :_destroy])
     end
 end
 
