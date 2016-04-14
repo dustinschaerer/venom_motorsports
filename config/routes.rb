@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
   match 'parts_list' => 'static_pages#parts_list', via: :get
-  match 'contact' => 'static_pages#contact', via: :get
+  match 'contact' => 'messages#new', via: :get
   # match 'engine_building'=> 'static_pages#engine_building', via: :get
   match 'rsr_engine_build'=> 'static_pages#rsr_engine_build', via: :get
   resources :posts, :path => "projects" do
   end
   resources :categories, :path => "" do
   end
+
+  resources :messages, except: [:update, :index]
 
 
 
