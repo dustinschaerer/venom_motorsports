@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :parts, :path => "parts_list" do
+  end
   root 'static_pages#home'
   match 'parts_list' => 'static_pages#parts_list', via: :get
   match 'contact' => 'messages#new', via: :get

@@ -1,0 +1,37 @@
+<div class="container m-t-20">
+  <div class="row">
+    <div class="col-lg-8">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @part.name %>
+</p>
+
+<p>
+  <strong>Part number:</strong>
+  <%= @part.part_number %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @part.amount %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @part.notes %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @part.part_image_url, class: "img-responsive" %>
+</p>
+
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>
+
+</div>
+</div>
+</div>

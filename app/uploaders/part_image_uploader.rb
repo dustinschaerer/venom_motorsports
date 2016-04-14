@@ -1,4 +1,4 @@
-class ArticleImageUploader < CarrierWave::Uploader::Base
+class PartImageUploader < CarrierWave::Uploader::Base
 
   require 'carrierwave/processing/mime_types'
   require 'carrierwave/orm/activerecord'
@@ -9,7 +9,6 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   include CarrierWave::MimeTypes
   process :set_content_type
-
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -26,15 +25,13 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process scale: [200, 300]
+  # process :scale => [200, 300]
   #
   # def scale(width, height)
   #   # do something
   # end
 
   # Create different versions of your uploaded files:
-
-
   version :lg do
     process resize_to_fill: [1200, 900, "center"]
   end
@@ -50,7 +47,7 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  def extension_whitelist
+  def extension_white_list
     %w(jpg jpeg gif png)
   end
 

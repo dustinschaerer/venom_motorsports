@@ -1,0 +1,43 @@
+<div class="container m-t-20 m-b-20">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <p id="notice"><%= notice %></p>
+
+<h1>Listing Parts</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Part number</th>
+      <th>Amount</th>
+      <th>Notes</th>
+      <th>Part Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parts.each do |part| %>
+      <tr>
+        <td><%= part.name %></td>
+        <td><%= part.part_number %></td>
+        <td><%= part.amount %></td>
+        <td><%= part.notes %></td>
+        <td><%= image_tag part.part_image_url, class: "img-responsive part-index" %></td>
+        <td><%= link_to 'Show', part, class: "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_part_path(part), class: "btn btn-default" %></td>
+        <td><%= link_to 'Destroy', part, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Part', new_part_path, class: "btn btn-success" %>
+
+    </div>
+  </div>
+</div>
