@@ -40,9 +40,9 @@
           <div id="links" class="row">
 
             <% @post_images.each_with_index do |post_image, i| %>
-              <div class="col-xs-3 no-gutters">
+              <div class="col-xs-3 col-sm-2 no-gutters">
 
-                <%= link_to image_tag(post_image.image, class: "img-responsive"), asset_path(post_image.image), data: {gallery: "gallery"}, title: ""  %>
+                <%= link_to image_tag(post_image.image, class: "img-responsive img-thumbnail"), asset_path(post_image.image), data: {gallery: "gallery"}, title: ""  %>
               </div>
             <% end %>
           </div>
