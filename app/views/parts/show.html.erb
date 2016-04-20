@@ -1,4 +1,15 @@
-<div class="container m-t-20">
+<div class="container-fluid bg-1 m-b-20">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="post-category"><%= @part.name %></h2>
+        <h5 class="post-subtitle"><%= @part.part_number %></h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
   <div class="row">
     <div class="col-lg-8">
 
@@ -29,8 +40,8 @@
   <%= image_tag @part.part_image_url, class: "img-responsive" %>
 </p>
 
-<%= link_to 'Edit', edit_part_path(@part) %> |
-<%= link_to 'Back', parts_path %>
+<%= link_to 'Edit', edit_part_path(@part), class: "btn btn-info" %> |
+<%= link_to 'Back', parts_path, class: "btn btn-warning" %>
 
 </div>
 </div>

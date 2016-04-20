@@ -193,6 +193,9 @@ a:focus {
             margin-top: 5px;
             margin-bottom: 5px;
             color: #000;
+            &:hover {
+              color: #fff;
+            }
         }
     }
 
@@ -535,14 +538,18 @@ body {
   padding: 50px 0px 50px 0px;
 }
 .recent {
-  padding: 50px 0px 50px 0px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   a.project-title {
     color: #666;
     font-size: 18px;
   }
 }
 .item {
-    margin-bottom: 25px;
+  padding-top: 25px;
+  border-top: solid 1px #fff;
+  margin-bottom: 25px;
+
 }
 
 .service-text {
@@ -555,4 +562,35 @@ body {
     border-bottom: solid 1px #fff;
     margin-bottom: 20px;
   }
+  .item {
+    padding-bottom: 0;
+    border: none;
+  }
+}
+// @media(max-width:767px) {
+//     .item {
+//     border-top: solid 1px #fff;
+//     border-bottom: solid 1px #fff;
+//     margin-bottom: 20px;
+//   }
+// }
+html {
+  padding-top: 125px;
+}
+
+.navbar-custom a {
+  color: #000;
+}
+
+html.static_pages.home {
+  padding-top: 0px;
+
+  .navbar-custom a {
+    color: #fff;
+  }
+
+}
+.bg-1 {
+background: #666;
+color: white;
 }
