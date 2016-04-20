@@ -578,19 +578,20 @@ html {
   padding-top: 125px;
 }
 
-.navbar-custom a {
-  color: #000;
+// .navbar-custom a {
+//   color: #000;
+// }
+
+.bg-1 {
+background: #666;
+color: white;
 }
 
 html.static_pages.home {
   padding-top: 0px;
 
-  .navbar-custom a {
-    color: #fff;
-  }
+  // .navbar-nav li a {
+  //   color: #fff;
+  // }
 
-}
-.bg-1 {
-background: #666;
-color: white;
 }

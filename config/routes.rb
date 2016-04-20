@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :parts, :path => "parts_list" do
   end
   root 'static_pages#home'
-  match 'parts_list' => 'static_pages#parts_list', via: :get
+  # match 'parts_list' => 'static_pages#parts_list', via: :get
   match 'contact' => 'messages#new', via: :get
   # match 'engine_building'=> 'static_pages#engine_building', via: :get
   match 'rsr_engine_build'=> 'static_pages#rsr_engine_build', via: :get
