@@ -35,6 +35,18 @@ h4 {
   letter-spacing: 2px;
 }
 
+h1.site-title {
+  margin-bottom: 8px;
+  margin-top: 30px;
+  font-size: 36px;
+}
+h2.site-subtitle {
+  font-size: 18px;
+}
+h2.service {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
 h1.post-title {
   font-size: 30px;
@@ -55,14 +67,14 @@ h4.post-gallery {
 }
 p {
     margin: 0 0 25px;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.4;
 }
 
 @media(min-width:768px) {
     p {
-        margin: 0 0 25px;
-        font-size: 18px;
+        margin: 0 0 20px;
+        font-size: 14px;
         line-height: 1.4;
     }
 }
@@ -478,6 +490,17 @@ body {
   font-size: 16px;
 }
 
+.btn-white-outline {
+  color: #fff;
+  border: 1px solid #fff;
+  // text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  &:hover {
+    background: #999;
+    color: #fff;
+  }
+}
 
 
 
@@ -503,4 +526,33 @@ body {
 .p-x-45 {
   padding-left: 45px;
   padding-right: 45px;
+}
+
+
+.services {
+  background: #666;
+  color: #fff;
+  padding: 50px 0px 50px 0px;
+}
+.recent {
+  padding: 50px 0px 50px 0px;
+  a.project-title {
+    color: #666;
+    font-size: 18px;
+  }
+}
+.item {
+    margin-bottom: 25px;
+}
+
+.service-text {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+@media(min-width:768px) {
+    .service-text {
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+    margin-bottom: 20px;
+  }
 }
