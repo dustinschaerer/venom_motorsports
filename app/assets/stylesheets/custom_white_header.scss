@@ -105,16 +105,24 @@ a:focus {
 
 }
 
-.navbar-collapse {
-  border: solid 1px #666;
 
+
+
+
+
+
+
+
+
+
+.navbar-collapse {
 }
 
 
 .navbar-custom .navbar-header {
   font-weight: 700;
-  box-shadow: 0 8px 6px -6px #999;
 }
+
 
 .navbar-custom .navbar-brand {
     font-weight: 700;
@@ -169,11 +177,15 @@ a:focus {
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a:active {
     outline: 0;
-    background-color: transparent;
+    color: #fff;
+    background-color: #666;
 }
 
+.navbar-custom .nav li.focus,
 .navbar-custom .nav li.active {
     outline: 0;
+    color: #fff;
+    background-color: #666;
 }
 
 .navbar-custom .nav li.active a {
@@ -189,6 +201,9 @@ a:focus {
 }
 
 @media(min-width:768px) {
+    .navbar-collapse {
+      border: none;
+    }
     .navbar-nav li a {
       padding-top: 15px;
       padding-bottom: 15px;
@@ -235,6 +250,7 @@ a:focus {
             }
         }
     }
+
 
     #logo {
       max-width: 100%;
