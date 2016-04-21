@@ -101,8 +101,19 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #000;
+    background-color: #fff;
 
+}
+
+.navbar-collapse {
+  border: solid 1px #666;
+
+}
+
+
+.navbar-custom .navbar-header {
+  font-weight: 700;
+  box-shadow: 0 8px 6px -6px #999;
 }
 
 .navbar-custom .navbar-brand {
@@ -113,19 +124,34 @@ a:focus {
     outline: 0;
 }
 
-.navbar-custom .navbar-brand .navbar-toggle {
-    padding: 4px 6px;
-    font-size: 16px;
-    color: #fff;
+.navbar-custom .navbar-toggle {
+    padding: 14px 10px;
+    font-size: 18px;
+    color: #333;
+    // background: #ccc;
+    border: solid 1px #aaa;
+    border-color: #ddd;
 }
+
+.navbar-custom .navbar-toggle .icon-bar {
+    background-color: #666;
+}
+
+// .navbar-toggle {
+//     padding: 4px 6px;
+//     font-size: 16px;
+//     color: #333;
+//     background: #ccc;
+//     border: solid 1px #aaa;
+// }
 
 .navbar-custom .navbar-brand .navbar-toggle:focus,
 .navbar-custom .navbar-brand .navbar-toggle:active {
-    outline: 0;
+    // outline: 0;
 }
 
 .navbar-custom a {
-    color: #fff;
+    color: #333;
 }
 
 .navbar-custom .nav li a {
@@ -163,6 +189,12 @@ a:focus {
 }
 
 @media(min-width:768px) {
+    .navbar-nav li a {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
     .navbar-custom {
         padding: 5px 0;
         border-bottom: 0;
@@ -171,7 +203,12 @@ a:focus {
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
-
+       .navbar-nav > li > a {
+            color: #fff;
+            &:hover {
+              color: #ccc;
+            }
+        }
     }
 
     .navbar-custom.top-nav-collapse {
@@ -187,7 +224,7 @@ a:focus {
           transition: max-width .5s ease-in-out,padding .5s ease-in-out;
           padding-left: 5px;
         }
-        .navbar-nav > li > a {
+        .navbar-nav li  a {
             padding-top: 15px;
             padding-bottom: 15px;
             margin-top: 5px;
@@ -217,12 +254,7 @@ a:focus {
   line-height: 20px;
 
 }
-.navbar-nav > li > a {
-padding-top: 15px;
-padding-bottom: 15px;
-margin-top: 25px;
-margin-bottom: 25px;
-}
+
 
 //////////////////////
 
@@ -504,7 +536,6 @@ body {
     color: #fff;
   }
 }
-
 
 
 
