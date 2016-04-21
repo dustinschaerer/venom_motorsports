@@ -8,8 +8,8 @@
 //   color: white;
 // }
 
+
 html.posts, html.parts, html.messages, html.categories {
-  padding-top: 125px;
 
   .post-main-image {
     padding-bottom: 20px;
@@ -60,6 +60,7 @@ html.posts, html.parts, html.messages, html.categories {
   .navbar-custom .nav li a:focus,
   .navbar-custom .nav li a:active {
       outline: 0;
+      color: #fff;
   }
 
   .navbar-custom .nav li.active {
@@ -75,4 +76,19 @@ html.posts, html.parts, html.messages, html.categories {
       color: #fff;
   }
 
+}
+
+
+@media(max-width:767px) {
+  html.posts, html.parts, html.messages, html.categories {
+    padding-top: 70px;
+    .post-title {
+      font-size: 20px;
+    }
+  }
+}
+@media(min-width:768px) {
+  html.posts, html.parts, html.messages, html.categories {
+    padding-top: 125px;
+  }
 }
