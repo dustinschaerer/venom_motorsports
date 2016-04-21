@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
 
   def set_header_categories
     @category_custom_builds = Post.where(category_id: 1)
-    @category_barn_finds = Post.where(category_id: 3)
-    @category_engine_builds = Post.where(category_id: 2)
+    @category_barn_finds = Post.where(category_id: 2)
+    @category_engine_builds = Post.where(category_id: 3)
   end
 
 end
