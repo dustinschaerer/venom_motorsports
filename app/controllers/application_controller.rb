@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
     @category_engine_builds = Post.where(category_id: 3)
   end
 
+  private
+
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(AdminUser)
+      root_path
+    else
+      root_path
+    end
+  end
+
 end
