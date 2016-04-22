@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :videos
   resources :parts, :path => "parts_list" do
   end
   root 'static_pages#home'

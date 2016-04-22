@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post_images = @post.build_images.all
+    @videos = Video.where(post_id: @post.id)
   end
 
   def new
@@ -73,7 +74,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:category_id, :title, :content, :teaser, :slug, :published_on, :published, :admin_user_id,
+      params.require(:post).permit(:category_id, :title, :content, :teaser, :specs, :slug, :published_on, :published, :admin_user_id,
        :article_image, :article_image_cache, build_images_attributes: [:id, :image, :post_id, :_destroy])
     end
 end

@@ -63,7 +63,7 @@
           <h3 class="panel-title">Project Specs</h3>
         </div>
         <div class="panel-body">
-          Project Specific details that might be relevant or impressive about the build such as duration of build, cost of build, final outcomes ( like perfromance)
+          <%= @post.specs? ? @post.specs.html_safe : "No specs for this project" %>
         </div>
       </div>
 
@@ -88,7 +88,9 @@
         <div class="panel-body">
           <div>Sometime you have to see to believe.</div>
           <br>
-          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/MGDueq54gmc" frameborder="0" class="thumbnail" allowfullscreen></iframe>
+          <% @videos.each do |video| %>
+            <iframe width="100%" height="auto" src="<%= video.url %>" frameborder="0" class="thumbnail" allowfullscreen></iframe>
+          <% end %>
           <hr>
           Check out our <a href="http://youtube.com">You Tube Channel</a> for all our videos.
         </div>

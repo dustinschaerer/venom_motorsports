@@ -1,0 +1,36 @@
+<div class="container-fluid bg-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="post-category">Listing Videos</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container m-t-20">
+  <div class="row">
+    <div class="col-lg-8">
+      <p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Post:</strong>
+  <%= @video.post %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @video.url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @video.description %>
+</p>
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
+    </div>
+  </div>
+</div>
