@@ -34,6 +34,7 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
 
+  process :watermark
 
   version :lg do
     process resize_to_fill: [1200, 900, "center"]
@@ -59,5 +60,12 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def watermark
+    manipulate! do |img|
+      img = img.composite(MiniMagick::Image.open("#{Rails.root}/app/assets/images/watermark1.png"), "png") do |c|
+        c.gravity "NorthWest"
+      end
+    end
+  end
 
 end
