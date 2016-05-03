@@ -34,7 +34,7 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
 
-  process :watermark
+  # process :watermark
 
   version :lg do
     process resize_to_fill: [1200, 900, "center"]
