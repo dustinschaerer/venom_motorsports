@@ -45,7 +45,7 @@
   <% @part.posts.each do |post|%>
   <ul>
     <li>
-      <%= post.title %>
+      <%= link_to post.title, post_path(post) %>
     </li>
   </ul>
   <% end %>
