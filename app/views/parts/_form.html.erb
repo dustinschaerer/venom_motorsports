@@ -8,13 +8,25 @@
     <%= f.input :notes %>
     <div class="row">
       <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3">
+        <%= image_tag(@part.part_image_url, class: "img-responsive img-thumbnail") if @part.part_image? %>
+        <%= f.input :part_image, as: :file %>
+        <%= f.hidden_field :part_image_cache %>
+      </div>
+    </div>
+  </div>
 
-    <%= image_tag(@part.part_image_url, class: "img-responsive img-thumbnail") if @part.part_image? %>
-    <%= f.input :part_image, as: :file %>
-    <%= f.hidden_field :part_image_cache %>
-  </div>
-</div>
-  </div>
+   <div class="well">
+      <h4>Projects Using This Part</h4>
+      <div class="row choose_parts">
+        <% Post.all.each do |post| -%>
+          <div class="col-md-6">
+            <%= hidden_field_tag "part[post_ids][]", nil %>
+            <%= check_box_tag "part[post_ids][]", post.id, @part.post_ids.include?(post.id), id: dom_id(post) -%>
+            <%= label_tag dom_id(post), post.title %><br>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-success" %>

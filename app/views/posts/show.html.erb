@@ -74,10 +74,13 @@
         <div class="panel-body">
           <div>Some of the parts we used are available for sale. <a href="/contact">Contact Us</a> to inquire about pricing and availability.</div>
           <hr>
+          <% @post.parts.each do |part|%>
           <ul>
-            <li>Fastener Clip - #MD388746</li>
-            <li>Example Part - #MD334545</li>
+            <li>
+              <%= link_to part.name, part_path(part) %>
+            </li>
           </ul>
+          <% end %>
         </div>
       </div>
 

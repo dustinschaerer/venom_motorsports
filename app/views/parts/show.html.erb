@@ -40,6 +40,18 @@
   <%= image_tag @part.part_image_url, class: "img-responsive" %>
 </p>
 
+<p>
+  <strong>Projects Using this Part:</strong>
+  <% @part.posts.each do |post|%>
+  <ul>
+    <li>
+      <%= post.title %>
+    </li>
+  </ul>
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_part_path(@part), class: "btn btn-info" %> |
 <%= link_to 'Back', parts_path, class: "btn btn-warning" %>
 
