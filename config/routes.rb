@@ -6,20 +6,19 @@ Rails.application.routes.draw do
   resources :parts, :path => "parts_list" do
   end
 
-  # match 'parts_list' => 'static_pages#parts_list', via: :get
   match 'contact' => 'messages#new', via: :get
-  # match 'engine_building'=> 'static_pages#engine_building', via: :get
-  match 'rsr_engine_build'=> 'static_pages#rsr_engine_build', via: :get
+  match 'categories/new' => 'categories#new', via: :get
+
   resources :posts, :path => "projects" do
   end
+
   resources :categories, :path => "" do
   end
 
-  resources :messages, except: [:update, :index]
-
-
+  resources :messages, except: [:update]
 
   resources :build_images
+
   # resources :barn_finds
   # resources :builds, path: "custom-builds-porsche"
   # The priority is based upon order of creation: first created -> highest priority.

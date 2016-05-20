@@ -3,9 +3,11 @@ require 'test_helper'
 class MessagesControllerTest < ActionController::TestCase
   setup do
     @message = messages(:one)
+    @dustin = admin_users(:dustin)
   end
 
   test "should get index" do
+    sign_in @dustin
     get :index
     assert_response :success
     assert_not_nil assigns(:messages)
@@ -21,25 +23,17 @@ class MessagesControllerTest < ActionController::TestCase
       post :create, message: { content: @message.content, email: @message.email }
     end
 
-    assert_redirected_to message_path(assigns(:message))
+    assert_redirected_to root_path
   end
 
   test "should show message" do
+    sign_in @dustin
     get :show, id: @message
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, id: @message
-    assert_response :success
-  end
-
-  test "should update message" do
-    patch :update, id: @message, message: { content: @message.content, email: @message.email }
-    assert_redirected_to message_path(assigns(:message))
-  end
-
   test "should destroy message" do
+    sign_in @dustin
     assert_difference('Message.count', -1) do
       delete :destroy, id: @message
     end

@@ -1,6 +1,6 @@
 <%= simple_form_for(@category) do |f| %>
   <%= f.error_notification %>
-
+  <%= f.hidden_field :category_id, value: @category.id %>
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :sort %>

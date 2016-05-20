@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :category do
-    name "MyString"
+    name "Custom Builds"
     sort 1
-    slug "MyString"
+    slug "custom_builds"
   end
 end

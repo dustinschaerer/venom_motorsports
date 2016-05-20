@@ -99,7 +99,11 @@
       <div class="col-md-8">
         <h2 class="project-title"><%= link_to post.title, post_path(post), class: "project-title" %></h2>
         <div class="post-details">
-          <span class="glyphicon glyphicon-time"></span> <%= post.published_on.strftime("%B %d, %Y") %> /
+          <span class="glyphicon glyphicon-time"></span>
+          <% if post.published_on %>
+            <%= post.published_on.strftime("%B %d, %Y") %>
+             /
+          <% end %>
           <%= link_to post.category.name, category_path(post.category) %>
         </div>
 

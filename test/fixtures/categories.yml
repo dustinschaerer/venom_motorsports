@@ -1,0 +1,12 @@
+builds:
+  name: Custom Builds
+  sort: 1
+  slug: custom_builds
+barn_finds:
+  name: Barn Finds
+  sort: 2
+  slug: barn_finds
+engine_builds:
+  name: Engine Builds
+  sort: 3
+  slug: engine_builds

@@ -1,0 +1,23 @@
+one:
+  category: builds
+  title: 1968 Bergspyder Elite
+  content: This is a hill climber.
+  teaser: This is a hill climber.
+  slug: 1968-bergspyder-elite
+  specs: 600 horsepower
+  published: true
+  published_on: <%= 1.week.ago.to_s %>
+  admin_user: dustin
+  article_image: 'sample.png'
+
+two:
+  category: barn_finds
+  title: 1968 Barn Brawler
+  content: This is a brawler.
+  teaser: This is a brawler.
+  slug: 1968-barn-brawler
+  specs: 450 horsepower
+  published: true
+  published_on: <%= 1.week.ago.to_s %>
+  admin_user: dustin
+  article_image: 'sample.png'

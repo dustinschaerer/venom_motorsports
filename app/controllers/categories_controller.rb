@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-
+  before_action :authenticate_admin_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     respond_to do |format|
       if @category.save(category_params)
-        format.html { redirect_to "/#{@category.slug}/", notice: 'Post was successfully updated.' }
+        format.html { redirect_to "/#{@category.slug}", notice: 'Post was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to "/#{@category.slug}/", notice: 'Post was successfully updated.' }
+        format.html { redirect_to "/#{@category.slug}", notice: 'Post was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -39,10 +39,12 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
-    respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+    begin
+      @category.destroy
+    rescue ActiveRecord::InvalidForeignKey
+      redirect_to category_path(@category), notice: "You Cannot Destroy a Category that contains Posts/Projects. You must delete those first."
+    else
+      redirect_to root_path, notice: 'Post was successfully destroyed.'
     end
   end
 
