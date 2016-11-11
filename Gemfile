@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
+gem 'simplecov', :require => false, :group => :test
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 
@@ -75,7 +75,6 @@ gem "sprockets-es6"
 gem 'trix'
 gem 'friendly_id', '~> 5.1.0'
 gem 'rails_12factor'
-
 
 group :test do
   gem "capybara"

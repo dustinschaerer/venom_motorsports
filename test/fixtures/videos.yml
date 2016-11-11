@@ -1,4 +1,4 @@
 one:
-  post_id: 1
+  post: one
   url: http://www.youtube.com
   description: Racing the car.

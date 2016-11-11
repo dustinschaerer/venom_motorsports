@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_admin_user!, only: [:index, :edit, :update, :destroy]
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin_user!, only: [:index, :show, :update, :destroy]
+  before_action :set_message, only: [:show, :update, :destroy]
 
   # GET /messages
   # GET /messages.json
@@ -16,10 +16,6 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
-  end
-
-  # GET /messages/1/edit
-  def edit
   end
 
   # POST /messages

@@ -8,7 +8,7 @@ one:
   published: true
   published_on: <%= 1.week.ago.to_s %>
   admin_user: dustin
-  article_image: 'sample.png'
+  article_image: sample.png
 
 two:
   category: barn_finds
@@ -20,4 +20,4 @@ two:
   published: true
   published_on: <%= 1.week.ago.to_s %>
   admin_user: dustin
-  article_image: 'sample.png'
+  article_image: sample.png

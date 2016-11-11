@@ -3,4 +3,4 @@ one:
   part_number: 12345ABC
   amount: 0
   notes: This is durable.
-  part_image: null
+  part_image: 'sample.png'

@@ -1,21 +1,27 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   root 'static_pages#home'
+
   resources :videos
+
   resources :parts, :path => "parts_list" do
   end
 
   match 'contact' => 'messages#new', via: :get
   match 'categories/new' => 'categories#new', via: :get
+  match 'manage' => 'static_pages#manage', via: :get
 
   resources :posts, :path => "projects" do
   end
 
-  resources :categories, :path => "" do
+  resources :messages, except: [:update, :edit]
+
+  resources :categories, except: [:index], :path => "" do
   end
 
-  resources :messages, except: [:update]
+
 
   resources :build_images
 

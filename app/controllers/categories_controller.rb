@@ -2,10 +2,6 @@ class CategoriesController < ApplicationController
   before_action :authenticate_admin_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @categories = Category.all
-  end
-
   def show
     @posts = @category.posts
   end

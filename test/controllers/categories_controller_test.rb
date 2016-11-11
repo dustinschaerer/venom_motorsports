@@ -59,4 +59,10 @@ class CategoriesControllerTest < ActionController::TestCase
 
     assert_redirected_to category_path(@builds)
   end
+
+  test 'should not get an index action' do
+    assert_raises(ActionController::UrlGenerationError) do
+      get :index
+    end
+  end
 end
