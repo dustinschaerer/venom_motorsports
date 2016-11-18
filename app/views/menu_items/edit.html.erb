@@ -1,6 +1,20 @@
-<h1>Editing Menu Item</h1>
+<div class="container-fluid bg-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Editing Menu Item</h1>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'form' %>
+<div class="container m-t-20">
+  <div class="row">
+    <div class="col-lg-12">
+      <p id="notice"><%= notice %></p>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Show', @menu_item %> |
-<%= link_to 'Back', menu_items_path %>
+

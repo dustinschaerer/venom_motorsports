@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   end
 
   match 'contact' => 'messages#new', via: :get
-  match 'categories/new' => 'categories#new', via: :get
   match 'manage' => 'static_pages#manage', via: :get
 
   resources :posts, :path => "projects" do

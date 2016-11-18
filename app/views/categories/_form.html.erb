@@ -6,10 +6,14 @@
     <%= f.input :sort %>
     <%= f.input :slug %>
   </div>
-
+  <br><br>
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-success" %>
+    <%= link_to 'Cancel / Back', categories_path, class: "btn btn-info" %>
+      &nbsp;
+    <% unless @category.new_record? %>
+      <%= link_to 'Destroy', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger pull-right" %>
+    <% end %>
   </div>
-  <br>
-  <br>
+  <br><br>
 <% end %>

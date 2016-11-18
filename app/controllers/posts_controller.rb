@@ -47,7 +47,6 @@ class PostsController < ApplicationController
       if @post.update(post_params)
         if params[:build_images_attributes]
           params[:build_images_attributes]['image'].each do |i|
-            # @build_image = @post.build_images.create!(:image => i, post_id: @post.id)
             @build_image = @post.build_images.create!(:image => i)
           end
         end

@@ -1,14 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid bg-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Listing Videos</h1>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Html:</strong>
-  <%= @menu_item.html %>
-</p>
+<div class="container m-t-20">
+  <div class="row">
+    <div class="col-lg-8">
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Sort:</strong>
-  <%= @menu_item.sort %>
-</p>
+      <p>
+        <strong>Html:</strong>
+        <%= @menu_item.html %>
+      </p>
 
-<%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
-<%= link_to 'Back', menu_items_path %>
+      <p>
+        <strong>Sort:</strong>
+        <%= @menu_item.sort %>
+      </p>
+
+      <%= link_to 'Edit', edit_menu_item_path(@menu_item), class: 'btn btn-info' %> |
+      <%= link_to 'Back', menu_items_path, class: 'btn btn-warning' %>
+      <br><br><br>
+    </div>
+  </div>
+</div>
