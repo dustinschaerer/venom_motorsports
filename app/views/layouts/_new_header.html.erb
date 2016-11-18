@@ -8,12 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
-      <% if admin_user_signed_in? %>
-        <a class="navbar-brand page-scroll" id="logo" href="/manage">
-      <% else %>
-        <a class="navbar-brand page-scroll" id="logo" href="/">
-      <% end %>
+      <a class="navbar-brand page-scroll" id="logo" href="/">
         <%= image_tag 'nh_logo_400.png', class: "img-responsive" %>
       </a>
     </div>
@@ -25,45 +20,9 @@
           <li><a href="/manage">Admin</a></li>
         <% end %>
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Custom Builds <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% @category_custom_builds.each do |this| %>
-            <li>
-              <%= link_to this.title, post_path(this) %>
-            </li>
-            <li role="separator" class="divider"></li>
-            <% end %>
-            <li><%= link_to 'See All Custom Builds', '/custom_builds' %></a></li>
-
-            <li role="separator" class="divider"></li>
-
-            <% @category_barn_finds.each do |this| %>
-            <li>
-              <%= link_to this.title, post_path(this) %>
-            </li>
-            <li role="separator" class="divider"></li>
-            <% end %>
-            <li><%= link_to "See All Barn Finds", '/barn_finds' %></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Engine Building <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-
-            <% @category_engine_builds.each do |this| %>
-            <li>
-              <%= link_to this.title, post_path(this) %>
-            </li>
-            <li role="separator" class="divider"></li>
-            <% end %>
-
-            <li><a href="/engine_building">All Engine Builds</a></li>
-          </ul>
-        </li>
-        <li><a href="/parts_list">Parts List</a></li>
-        <li><a href="#">Swag Shop</a></li>
-        <li><a href="/contact">Contact</a></li>
+       <% @menu_items.each do |menu_item| %>
+          <%= menu_item.html.html_safe %>
+        <% end %>
       </ul>
     </div>
   </div>

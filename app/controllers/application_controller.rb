@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
 
   def set_footer
     @footer = Footer.first
+    @menu_items = MenuItem.all.order(:sort)
   end
 
   private

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2 class="post-category">Listing Videos</h2>
+        <h1>Listing Videos</h1>
       </div>
     </div>
   </div>
@@ -13,24 +13,24 @@
     <div class="col-lg-8">
       <p id="notice"><%= notice %></p>
 
+      <p>
+        <strong>Post:</strong>
+        <%= @video.post.title %>
+      </p>
 
-<p>
-  <strong>Post:</strong>
-  <%= @video.post %>
-</p>
+      <div>
+        <strong>Video:</strong>
+        <iframe width="100%" width="560" height="365" src="<%= @video.url %>" frameborder="0" allowfullscreen></iframe>
+      </div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @video.url %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @video.description %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @video.description %>
-</p>
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+      <%= link_to 'Edit', edit_video_path(@video), class: 'btn btn-info' %>
+      <%= link_to 'Back', videos_path, class: 'btn btn-warning' %>
+      <br><br><br>
     </div>
   </div>
 </div>

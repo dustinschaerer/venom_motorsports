@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2 class="post-category">Listing Videos</h2>
+        <h1>Listing Videos</h1>
       </div>
     </div>
   </div>
@@ -27,21 +27,23 @@
         <tbody>
           <% @videos.each do |video| %>
             <tr>
-              <td><%= video.post.id %></td>
+              <td><%= video.post.title %></td>
               <td><%= video.url %></td>
               <td><%= video.description %></td>
-              <td><%= link_to 'Show', video %></td>
-              <td><%= link_to 'Edit', edit_video_path(video) %></td>
-              <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show', video, class: 'btn btn-info' %></td>
+              <td><%= link_to 'Edit', edit_video_path(video), class: 'btn btn-warning' %></td>
+              <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
-
       <br>
-
-      <%= link_to 'New Video', new_video_path %>
-
+      <br>
+      <%= link_to 'New Video', new_video_path, class: 'btn btn-success' %>
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
   </div>
 </div>

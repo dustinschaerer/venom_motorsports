@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :menu_items
   resources :services
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -20,19 +21,16 @@ Rails.application.routes.draw do
   resources :messages, except: [:update, :edit]
   resources :build_images
   resources :settings, except: [:new, :create, :destroy, :show]
+
+  match '/remove_home_image/:id' => 'settings#remove_home_image', as: :remove_home_image, via: [:post]
+
   resources :footers, except: [:new, :create, :destroy, :show]
 
-  resources :categories, except: [:index], :path => "" do
-  end
+  # resources :categories, except: [:index], :path => "" do
+  resources :categories
 
-
-  # resources :barn_finds
-  # resources :builds, path: "custom-builds-porsche"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

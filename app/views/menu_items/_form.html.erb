@@ -1,0 +1,15 @@
+<div class="container m-b-20">
+  <%= simple_form_for(@menu_item) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :html %>
+      <%= f.input :sort %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: 'btn btn-success' %>
+      <%= link_to 'Back / Cancel', menu_items_path, class: 'btn btn-danger pull-right' %>
+    </div>
+  <% end %>
+</div>

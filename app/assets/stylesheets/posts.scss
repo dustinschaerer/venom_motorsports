@@ -10,7 +10,7 @@
 
 
 html.posts, html.parts, html.messages, html.categories,
-html.services, html.settings, html.footers {
+html.services, html.settings, html.footers, html.videos {
 
   .post-main-image {
     padding-bottom: 20px;
@@ -82,7 +82,7 @@ html.services, html.settings, html.footers {
 
 @media(max-width:767px) {
   html.posts, html.parts, html.messages, html.categories,
-html.services, html.settings, html.footers {
+html.services, html.settings, html.footers, html.videos {
     padding-top: 70px;
     .post-title {
       font-size: 20px;
@@ -91,7 +91,7 @@ html.services, html.settings, html.footers {
 }
 @media(min-width:768px) {
   html.posts, html.parts, html.messages, html.categories,
-html.services, html.settings, html.footers {
+html.services, html.settings, html.footers, html.videos {
     padding-top: 125px;
   }
 }

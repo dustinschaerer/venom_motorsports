@@ -1,13 +1,17 @@
-<%= simple_form_for(@video) do |f| %>
-  <%= f.error_notification %>
+<div class="container m-b-20">
+  <%= simple_form_for(@video) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.association :post %>
-    <%= f.input :url %>
-    <%= f.input :description %>
-  </div>
+    <div class="form-inputs">
+      <%= f.association :post %>
+      <%= f.input :url %>
+      <%= f.input :description %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+      <%= link_to 'Show', @video %> |
+      <%= link_to 'Back', videos_path %>
+    </div>
+  <% end %>
+</div>

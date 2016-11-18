@@ -1,8 +1,20 @@
 <div class="container m-b-20">
-  <%= simple_form_for(@setting) do |f| %>
+  <%= simple_form_for(@setting, :html => { multipart: true }) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
-      <%= f.input :main_image_url %>
+
+      <fieldset class="col-xs-12">
+      <%= f.label :image, "Home Page Main Image" %>
+      <% if f.object.home_image? %>
+      <%= image_tag(f.object.home_image, class: "img-responsive main_image") %>
+      <%= link_to "Remove Photo", remove_home_image_path(@setting),  method: :post, class: 'inline btn btn-danger btn-block remove-main-image-btn m-l-2' %>
+      <% else %>
+        <br>Please upload an image for the home page.<br><br>
+      <% end %>
+      <%= f.input :home_image, as: :file, label: "Upload File" %>
+      </fieldset>
+
+
       <br>
       <%= f.input :title %>
       <br>

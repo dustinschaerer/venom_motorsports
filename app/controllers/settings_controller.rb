@@ -1,7 +1,7 @@
 class SettingsController < ApplicationController
 
   before_action :authenticate_admin_user!
-  before_action :set_setting, only: [:show, :edit, :update, :destroy]
+  before_action :set_setting, only: [:show, :edit, :update, :destroy, :remove_home_image]
 
   def index
     redirect_to '/settings/1/edit'
@@ -36,6 +36,16 @@ class SettingsController < ApplicationController
     end
   end
 
+  def remove_home_image
+    @setting.remove_home_image!
+    @setting.save
+
+    respond_to do |format|
+      format.html { redirect_to edit_setting_path(@setting) }
+      format.js { }
+    end
+  end
+
   private
 
     def set_setting
@@ -43,7 +53,8 @@ class SettingsController < ApplicationController
     end
 
     def setting_params
-      params.require(:setting).permit(:title, :subtitle, :description, :section_title, :projects_title, :main_image_url)
+      params.require(:setting).permit(:title, :subtitle, :description, :section_title, :projects_title,
+        :main_image_url, :home_image, :remove_home_image)
     end
 end
 

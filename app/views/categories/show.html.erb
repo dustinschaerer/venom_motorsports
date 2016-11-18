@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2 class="post-category"><%= @category.name %></h2>
+        <h2 class="post-category"><%= @category.name %><% if current_admin_user %><%= link_to 'Edit', edit_category_path(@category), class: 'btn btn-default pull-right' %><% end %></h2>
         <h5 class="post-subtitle">Subtitle can go right here</h5>
       </div>
     </div>

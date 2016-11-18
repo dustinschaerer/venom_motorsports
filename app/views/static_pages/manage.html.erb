@@ -1,41 +1,42 @@
-<div class="container-fluid m-t-20 m-b-20">
+<div class="container-fluid m-b-20">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-       <h1 class="site-title">New Historics</h1>
-        <h2 class="site-subtitle">Management Panel</h2>
-        <hr>
+      <div class="col-xs-12 col-sm-6 col-md-8">
+        <h1>Admin Management Panel</h1>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+       <%= link_to "Log out", destroy_admin_user_session_path, :method => :delete, class: 'pull-right btn btn-danger' %>
       </div>
     </div>
 
+<hr>
     <div class="row">
       <div class="col-md-6">
         <p><%= link_to 'Edit Home Page HTML', '/settings/1/edit', class: 'btn btn-info' %></p>
-        <p><%= link_to 'Edit Footer HTML', '/footers/1/edit', class: 'btn btn-success' %></p>
-        <p><%= link_to 'Edit Services', '/services', class: 'btn btn-info' %></p>
-        <p><%= link_to 'Create New Project', new_post_path, class: 'btn btn-success' %></p>
-     <!--    <p><%= link_to 'View All Projects', posts_path, class: 'btn btn-info' %></p>
-        <p><%= link_to 'Add New Category', new_category_path, class: 'btn btn-success' %></p>
-        <p><%= link_to 'View All Categories', categories_path, class: 'btn btn-info' %></p> -->
-
-
+        <p><%= link_to 'Edit Navigation Menu Items', '/menu_items', class: 'btn btn-info' %></p>
+        <p><%= link_to 'Edit Services HTML', '/services', class: 'btn btn-info' %></p>
+        <p><%= link_to 'Edit Footer HTML', '/footers/1/edit', class: 'btn btn-info' %></p>
+        <p><%= link_to 'View Contact Form Messages', messages_path, class: 'btn btn-warning' %></p>
+        <p><%= link_to 'View Videos', videos_path, class: 'btn btn-warning' %></p
         <p></p>
       </div>
       <div class="col-md-6">
+        <p><%= link_to 'Create New Project', new_post_path, class: 'btn btn-success' %></p>
+        <p><%= link_to 'View All Projects', posts_path, class: 'btn btn-warning' %></p>
+        <p><%= link_to 'Create New Category', new_category_path, class: 'btn btn-success' %></p>
+        <p><%= link_to 'View All Categories', categories_path, class: 'btn btn-warning' %></p>
         <p><%= link_to 'Create New Part', new_part_path, class: 'btn btn-success' %></p>
-        <p><%= link_to 'View All Parts', parts_path, class: 'btn btn-info' %></p>
-        <p><%= link_to 'See Contact Form Messages', messages_path, class: 'btn btn-default' %></p>
+        <p><%= link_to 'View All Parts', parts_path, class: 'btn btn-warning' %></p>
         <p></p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid services">
+<div class="container-fluid-bg services">
   <div class="container">
     <div class="row text-center">
       <div class="col-xs-12">
-
       </div>
     </div>
   </div>

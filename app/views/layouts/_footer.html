@@ -24,11 +24,7 @@
     <div class="footer-nav">
         <div class="container">
             <ul class="list-inline f-menu-items">
-                <li><a href="#">Terms of use</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Site Map</a></li>
-                <li><a href="#">Sign In</a></li>
+              <%= @footer.links.html_safe if @footer %>
             </ul>
             <div class="footer-privacy-text">
                 Copyright © 2016 <a href="#">New Historics</a>
