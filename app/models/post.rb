@@ -9,5 +9,5 @@ class Post < ActiveRecord::Base
   friendly_id :slug, use: :slugged
   mount_uploader :article_image, ArticleImageUploader
 
-  validates_presence_of :title, :category_id
+  validates_presence_of :title, :category_id, :slug
 end

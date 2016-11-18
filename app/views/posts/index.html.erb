@@ -24,14 +24,13 @@
         <%= image_tag post.article_image, class: "img-responsive img-thumbnail m-b-20" %>
       </div>
       <div class="col-md-8">
-        <h2 class="project-title"><%= link_to post.title, post_path(post.slug), class: "project-title" %></h2>
+        <h2 class="project-title">
+          <% if post.slug != "" %><%= link_to post.title, post_path(post.slug), class: "project-title" %><% end %>
+        </h2>
         <div class="post-details">
           <span class="glyphicon glyphicon-time"></span> <%= post.published_on.strftime("%B %d, %Y") %> /
           <%= link_to post.category.name, category_path(post.category) %>
         </div>
-
-
-
 
         <%= post.teaser.html_safe %>
         <br>
