@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @setting.title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @setting.subtitle %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @setting.description %>
+</p>
+
+<p>
+  <strong>Section title:</strong>
+  <%= @setting.section_title %>
+</p>
+
+<p>
+  <strong>Projects title:</strong>
+  <%= @setting.projects_title %>
+</p>
+
+<p>
+  <strong>Main image url:</strong>
+  <%= @setting.main_image_url %>
+</p>
+
+<%= link_to 'Edit', edit_setting_path(@setting) %> |
+<%= link_to 'Back', settings_path %>

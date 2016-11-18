@@ -1,0 +1,15 @@
+<div class="container m-b-20">
+  <%= simple_form_for(@service) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :link_text %>
+      <%= f.input :link_destination %>
+      <%= f.input :sort %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

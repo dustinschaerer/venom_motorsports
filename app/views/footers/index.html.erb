@@ -1,0 +1,50 @@
+<div class="container-fluid bg-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="post-category">Showing Footer</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container m-t-20">
+  <div class="row">
+    <div class="col-lg-12">
+      <p id="notice"><%= notice %></p>
+
+
+      <div class="container">
+        <div class="row m-t-20">
+          <div class="col-sm-6 col-md-4">
+            <%= @footer.first_column.html_safe %>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <%= @footer.second_column.html_safe %>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <%= @footer.third_column.html_safe %>
+          </div>
+        </div>
+      </div>
+
+
+      <footer id="footer-bottom">
+          <div class="footer-nav">
+              <div class="container">
+                 <%= @footer.links.html_safe %>
+
+                  <div class="footer-privacy-text">
+                      <%= @footer.copyright.html_safe %>
+                  </div>
+              </div>
+          </div>
+      </footer>
+
+      <br /><br /><br />
+      <%= link_to 'Edit Footer Fields', edit_footer_path(@footer), class: 'btn btn-warning' %> |
+      <%= link_to 'Back to Admin Manager', '/manage', class: 'btn btn-info' %>
+      <br /><br /><br />
+    </div>
+  </div>
+</div>

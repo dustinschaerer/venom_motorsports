@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :services
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -17,13 +18,13 @@ Rails.application.routes.draw do
   end
 
   resources :messages, except: [:update, :edit]
+  resources :build_images
+  resources :settings, except: [:new, :create, :destroy, :show]
+  resources :footers, except: [:new, :create, :destroy, :show]
 
   resources :categories, except: [:index], :path => "" do
   end
 
-
-
-  resources :build_images
 
   # resources :barn_finds
   # resources :builds, path: "custom-builds-porsche"

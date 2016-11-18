@@ -11,66 +11,36 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-xs-12">
-       <h1 class="site-title">New Historics</h1>
-        <h2 class="site-subtitle">Vintage Race Car Preservation, Restoration & Engineering</h2>
+       <h1 class="site-title"><%= @setting.title %></h1>
+        <h2 class="site-subtitle"><%= @setting.subtitle %></h2>
         <hr>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-
-        <p>We hope you share our enthusiasm and passion for vintage race car preservation, restoration, and engineering history with particular focus on Porsche prototype cars from the late sixties: types 907, 910, 908, and 917.  NewHistorics.com also serves as a technical reference for countless Porsche factory race car parts and catalogue of painstakingly crafted directly interchangeable components that have supported and restored many factory original historic cars around the world for over 15 years. NewHistorics.com showcases a body of work by a collection of specialized engineers, fabricators, and restoration experts.</p>
+        <%= @setting.description.html_safe %>
       </div>
-
-      <!-- <div class="col-md-3">
-        <h3>Placeholder</h3>
-        <p> Ullamco fashion axe excepteur next level, aesthetic ramps venmo selfies. Veniam bicycle rights VHS thundercats, reprehenderit laboris eu tempor man braid. Assumenda lomo sunt austin wayfarers. Austin reprehenderit sed assumenda.</p>
-        <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Videos</h3>
-        </div>
-        <div class="panel-body">
-          <div>Sometime you have to see to believe.</div>
-          <br>
-          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/MGDueq54gmc" frameborder="0" class="thumbnail" allowfullscreen></iframe>
-          <hr>
-          Check out our <a href="http://youtube.com">You Tube Channel</a> for all our videos.
-        </div> -->
-
     </div>
   </div>
 </div>
 
-<div class="container-fluid services">
+<div class="container-fluid services-boxes">
   <div class="container">
     <div class="row text-center">
       <div class="col-xs-12">
-        <h2>About Us / Services</h2>
+        <h2><%= @setting.section_title %></h2>
 
       </div>
     </div>
     <div class="row m-t-20 text-center">
-      <div class="col-sm-6 col-md-3 item">
-        <h2 class="service">Custom Builds</h2>
-        <div class="service-text">Veniam bicycle rights VHS thundercats, reprehenderit laboris eu tempor man braid. Assumenda lomo sunt austin wayfarers. Austin reprehenderit sed assumenda.</div>
-        <%= link_to "See All Builds", '/custom_builds', class: "btn btn-white-outline" %>
 
-      </div>
-      <div class="col-sm-6 col-md-3 item">
-        <h2 class="service">Engine Building</h2>
-        <div class="service-text">Veniam bicycle rights VHS thundercats, reprehenderit laboris eu tempor man braid. Assumenda lomo sunt austin wayfarers. Austin reprehenderit sed assumenda.</div>
-        <%= link_to "See Engine Builds", '/engine_building', class: "btn btn-white-outline" %>
-      </div>
-      <div class="col-sm-6 col-md-3 item">
-        <h2 class="service">Barn Finds</h2>
-        <div class="service-text">Veniam bicycle rights VHS thundercats, reprehenderit laboris eu tempor man braid. Assumenda lomo sunt austin wayfarers. Austin reprehenderit sed assumenda.</div>
-        <%= link_to "See All Barn Finds", '/barn_finds', class: "btn btn-white-outline" %>
-      </div>
-      <div class="col-sm-6 col-md-3 item">
-        <h2 class="service">All Projects</h2>
-        <div class="service-text">Veniam bicycle rights VHS thundercats, reprehenderit laboris eu tempor man braid. Assumenda lomo sunt austin wayfarers. Austin reprehenderit sed assumenda.</div>
-        <%= link_to "See All Projects", '/projects', class: "btn btn-white-outline" %>
-      </div>
+      <% @services.each do |service| %>
+        <div class="col-sm-6 col-md-3 item">
+          <h2 class="service"><%= service.title %></h2>
+          <div class="service-text"><%= service.description %></div>
+          <%= link_to "#{service.link_text}", "#{service.link_destination}", class: "btn btn-white-outline" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -80,9 +50,8 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-xs-12">
-        <h2>Recent Projects</h2>
+        <h2><%= @setting.projects_title %></h2>
         <hr>
-
       </div>
     </div>
     <div class="row m-t-20">

@@ -1,0 +1,24 @@
+<div class="container m-b-20">
+  <%= simple_form_for(@setting) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :main_image_url %>
+      <br>
+      <%= f.input :title %>
+      <br>
+      <%= f.input :subtitle %>
+      <br>
+      <%= f.label :description %>
+      <%= f.trix_editor :description %>
+      <br>
+      <%= f.input :section_title %>
+      <br>
+      <%= f.input :projects_title %>
+      <br>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, class: 'btn btn-success' %>
+      <%= link_to 'Back to Admin Manager', '/manage', class: 'btn btn-danger pull-right' %>
+    </div>
+  <% end %>
+</div>

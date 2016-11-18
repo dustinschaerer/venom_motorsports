@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506173708) do
+ActiveRecord::Schema.define(version: 20161117231439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,16 @@ ActiveRecord::Schema.define(version: 20160506173708) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "footers", force: :cascade do |t|
+    t.text     "first_column"
+    t.text     "second_column"
+    t.text     "third_column"
+    t.text     "links"
+    t.text     "copyright"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -149,6 +159,27 @@ ActiveRecord::Schema.define(version: 20160506173708) do
 
   add_index "posts", ["admin_user_id"], name: "index_posts_on_admin_user_id", using: :btree
   add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+
+  create_table "services", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link_text"
+    t.string   "link_destination"
+    t.integer  "sort"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.text     "title"
+    t.text     "subtitle"
+    t.text     "description"
+    t.text     "section_title"
+    t.text     "projects_title"
+    t.string   "main_image_url"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "videos", force: :cascade do |t|
     t.integer  "post_id"

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First column:</strong>
+  <%= @footer.first_column %>
+</p>
+
+<p>
+  <strong>Second column:</strong>
+  <%= @footer.second_column %>
+</p>
+
+<p>
+  <strong>Third column:</strong>
+  <%= @footer.third_column %>
+</p>
+
+<p>
+  <strong>Links:</strong>
+  <%= @footer.links %>
+</p>
+
+<p>
+  <strong>Copyright:</strong>
+  <%= @footer.copyright %>
+</p>
+
+<%= link_to 'Edit', edit_footer_path(@footer) %> |
+<%= link_to 'Back', footers_path %>
