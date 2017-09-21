@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.4.1'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.9'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 
@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -63,11 +64,11 @@ group :development do
 end
 
 gem 'carrierwave'
-gem 'fog', require: 'fog/aws'
+gem 'fog-aws'
 gem 'mini_magick'
 
 gem 'devise'
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin'
 gem "newrelic_rpm", ">= 3.9.8"
 gem "simple_form"
 gem "sprockets", ">= 3.0.0"

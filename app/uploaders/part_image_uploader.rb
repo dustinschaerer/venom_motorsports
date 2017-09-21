@@ -1,14 +1,14 @@
 class PartImageUploader < CarrierWave::Uploader::Base
 
-  require 'carrierwave/processing/mime_types'
+  # require 'carrierwave/processing/mime_types'
   require 'carrierwave/orm/activerecord'
   include Sprockets::Rails::Helper
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  include CarrierWave::MimeTypes
-  process :set_content_type
+  # include CarrierWave::MimeTypes
+  # process :set_content_type
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
