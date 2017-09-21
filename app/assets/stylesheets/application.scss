@@ -12,17 +12,17 @@
  *
  */
 @charset "utf-8";
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,700|Open+Sans:400,700);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|PT+Sans:400,700|Lora:400,700|Lato:400,700);
-@import "bootstrap-sprockets";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,700);
+// Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
 // @import "bootstrap_custom";
 @import "barn_finds";
 @import "categories";
 @import "posts";
 @import "trix";
 @import "custom_white_header";
-@import "blueimp-gallery";
-@import "bootstrap-image-gallery";
-@import "blueimp-gallery-indicator";
-@import "blueimp-gallery-video";
+// @import "blueimp-gallery";
+// @import "bootstrap-image-gallery";
+// @import "blueimp-gallery-indicator";
+// @import "blueimp-gallery-video";

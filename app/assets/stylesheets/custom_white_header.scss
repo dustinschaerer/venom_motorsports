@@ -8,8 +8,8 @@ body {
     width: 100%;
     height: 100%;
     font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #666;
-    // background-color: #000;
+    color: #333;
+    background-color: #fff;
 }
 
 html {
@@ -317,7 +317,7 @@ a:focus {
 ///////////////////////////
 .navbar-brand {
   float: left;
-  padding: 0px 5px 0px 5px;
+  padding-left: 30px;
   font-size: 18px;
   line-height: 20px;
 }
@@ -516,16 +516,16 @@ body {
 //     margin-bottom: 20px;
 //   }
 // }
-@media(max-width:991px) {
-  html {
-    padding-top: 70px;
-  }
-}
-@media(min-width:992px) {
-  html {
-    padding-top: 125px;
-  }
-}
+// @media(max-width:991px) {
+//   html {
+//     padding-top: 70px;
+//   }
+// }
+// @media(min-width:992px) {
+//   html {
+//     padding-top: 125px;
+//   }
+// }
 
 // .navbar-custom a {
 //   color: #000;
@@ -642,4 +642,47 @@ html.static_pages.home {
     Label the data
     */
     #no-more-tables td:before { content: attr(data-title); }
+}
+
+.navbar {
+  padding: 0;
+}
+#logo-stripe {
+  background: #ee3938;
+  position:absolute;
+  top:127px;
+  left:150px;
+  height:14px;
+  width:100%;
+}
+#logo-piece {
+  background: #ee3938;
+  position:absolute;
+  top:127px;
+  left:0px;
+  height:14px;
+  width:50px;
+}
+#logo-blue-stripe {
+  background: #00649b;
+  position: absolute;
+  top: 145px;
+  left:0px;
+  height:14px;
+  width: 100%;
+}
+.navbar-light .navbar-nav .nav-link {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  text-transform: uppercase;
+  font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  color: #555555;
+  &:hover {
+    color: #ee3938;
+    webkit-box-shadow:inset 0px 0px 0px 3px #00649b;
+    -moz-box-shadow:inset 0px 0px 0px 3px #00649b;
+    box-shadow:inset 0px 0px 0px 3px #00649b;
+  }
 }

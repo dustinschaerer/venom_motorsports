@@ -80,18 +80,18 @@ html.services, html.settings, html.footers, html.videos, html.menu_items {
 }
 
 
-@media(max-width:767px) {
-  html.posts, html.parts, html.messages, html.categories,
-html.services, html.settings, html.footers, html.videos, html.menu_items {
-    padding-top: 70px;
-    .post-title {
-      font-size: 20px;
-    }
-  }
-}
-@media(min-width:768px) {
-  html.posts, html.parts, html.messages, html.categories,
-html.services, html.settings, html.footers, html.videos, html.menu_items {
-    padding-top: 125px;
-  }
-}
+// @media(max-width:767px) {
+//   html.posts, html.parts, html.messages, html.categories,
+// html.services, html.settings, html.footers, html.videos, html.menu_items {
+//     padding-top: 70px;
+//     .post-title {
+//       font-size: 20px;
+//     }
+//   }
+// }
+// @media(min-width:768px) {
+//   html.posts, html.parts, html.messages, html.categories,
+// html.services, html.settings, html.footers, html.videos, html.menu_items {
+//     padding-top: 125px;
+//   }
+// }

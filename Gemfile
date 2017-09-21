@@ -39,9 +39,9 @@ gem 'simplecov', :require => false, :group => :test
 # gem 'capistrano-rails', group: :development
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'bootstrap_form'
-gem 'Bootstrap-Image-Gallery-rails'
+# gem 'bootstrap-sass', '~> 3.3.6'
+# gem 'bootstrap_form'
+# gem 'Bootstrap-Image-Gallery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -63,6 +63,7 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'bootstrap', '~> 4.0.0.beta'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'

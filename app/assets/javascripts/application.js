@@ -10,17 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
+//= require popper
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require trix
 //= require custom
 //= require_tree .
-
-//= require blueimp-gallery
-//= require blueimp-gallery-fullscreen
-//= require blueimp-gallery-indicator
-//= require blueimp-gallery-video
-//= require blueimp-gallery-youtube
-//= require jquery.blueimp-gallery
-//= require bootstrap-image-gallery

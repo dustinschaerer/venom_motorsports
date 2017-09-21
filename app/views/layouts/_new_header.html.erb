@@ -1,29 +1,20 @@
-<!-- Navigation -->
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand page-scroll" id="logo" href="/">
-        <%= image_tag 'nh_logo_400.png', class: "img-responsive" %>
-      </a>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-      <ul class="nav navbar-nav">
-        <% if current_admin_user %>
-          <li><a href="/manage">Admin</a></li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"><%= image_tag 'venom_logo_v1.png' %></a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="navbar-nav">
+      <% if current_admin_user %>
+        <li class="nav-item"><a class="nav-link" href="/manage">Admin</a></li>
+      <% end %>
+      <% @menu_items.each do |menu_item| %>
+          <li class="nav-item"><%= menu_item.html.html_safe %></li>
         <% end %>
-        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-       <% @menu_items.each do |menu_item| %>
-          <%= menu_item.html.html_safe %>
-        <% end %>
-      </ul>
-    </div>
+    </ul>
   </div>
+
 </nav>
