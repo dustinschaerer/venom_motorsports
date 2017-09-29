@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :set_header_categories, :set_footer
+  # before_filter :set_header_categories, :set_footer
 
   def set_header_categories
     @category_custom_builds = Post.where(category_id: 1)
