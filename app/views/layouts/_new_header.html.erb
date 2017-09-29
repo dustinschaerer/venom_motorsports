@@ -11,9 +11,12 @@
       <% if current_admin_user %>
         <li class="nav-item"><a class="nav-link" href="/manage">Admin</a></li>
       <% end %>
-      <% @menu_items.each do |menu_item| %>
+
+      <% if !@menu_items.empty? %>
+        <% @menu_items.each do |menu_item| %>
           <li class="nav-item"><%= menu_item.html.html_safe %></li>
         <% end %>
+      <% end %>
     </ul>
   </div>
 
