@@ -1,7 +1,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <%= image_tag @setting.home_image, class: "img-fluid" %>
+      <%=
+      #image_tag @setting.home_image, class: "img-fluid"
+      %>
     </div>
   </div>
 </div>
@@ -17,7 +19,9 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <%= @setting.description.html_safe %>
+        <%=
+        #@setting.description.html_safe
+        %>
       </div>
     </div>
   </div>
@@ -27,10 +31,13 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-xs-12">
-        <h2><%= @setting.section_title %></h2>
+        <h2><%=
+         # @setting.section_title
+         %></h2>
       </div>
     </div>
     <div class="row mt-3 text-center">
+
       <% @services.each do |service| %>
         <div class="col-sm-6 col-md-3 item">
           <h2 class="service"><%= service.title %></h2>
@@ -46,36 +53,13 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-xs-12">
-        <h2><%= @setting.projects_title %></h2>
+        <h2><%=
+        #@setting.projects_title
+        %></h2>
         <hr>
       </div>
     </div>
     <div class="row mt-3">
-
-    <% @posts.each do |post| %>
-
-        <div class="col-md-4">
-          <%= image_tag post.article_image, class: "img-responsive img-thumbnail mb-3" %>
-        </div>
-        <div class="col-md-8">
-          <h2 class="project-title"><%= link_to post.title, post_path(post), class: "project-title" %></h2>
-          <div class="post-details">
-            <span class="glyphicon glyphicon-time"></span>
-            <% if post.published_on %>
-              <%= post.published_on.strftime("%B %d, %Y") %>
-               /
-            <% end %>
-            <%= link_to post.category.name, category_path(post.category) %>
-          </div>
-          <%= post.teaser.html_safe %>
-          <br>
-          <%= link_to 'Read More', post_path(post), class: "btn btn-info" %> |
-          <%= link_to 'Edit', edit_post_path(post), class: "btn btn-warning" %> |
-          <%= link_to 'Destroy', post_path(post), method: :destroy, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-          <br>
-        </div>
-      <hr />
-    <% end %>
 
     </div>
   </div>
