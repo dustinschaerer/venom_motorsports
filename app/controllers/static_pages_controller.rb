@@ -11,6 +11,7 @@ class StaticPagesController < ApplicationController
     if !services.nil?
       @services = services
     end
+    @footer = Footer.first
   end
 
   def manage

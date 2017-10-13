@@ -12,9 +12,11 @@
         <li class="nav-item"><a class="nav-link" href="/manage">Admin</a></li>
       <% end %>
 
-      <% if @menu_items.to_i > 0 %>
-        <% @menu_items.each do |menu_item| %>
-          <li class="nav-item"><%= menu_item.html.html_safe %></li>
+      <% if !@menu_items.nil? %>
+        <% if @menu_items.size.to_i > 0 %>
+          <% @menu_items.each do |menu_item| %>
+            <li class="nav-item"><%= menu_item.html.html_safe %></li>
+          <% end %>
         <% end %>
       <% end %>
     </ul>
