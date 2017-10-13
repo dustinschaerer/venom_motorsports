@@ -1,9 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <%=
-      #image_tag @setting.home_image, class: "img-fluid"
-      %>
+      <%= image_tag @setting.home_image, class: "img-fluid" %>
     </div>
   </div>
 </div>
@@ -13,20 +11,14 @@
     <div class="row text-center">
       <div class="col-xs-12">
         <h1 class="site-title">
-          <%=
-          # @setting.title
-          %></h1>
-        <h2 class="site-subtitle"><%=
-        #@setting.subtitle
-        %></h2>
+          <%= @setting.title %></h1>
+        <h2 class="site-subtitle"><%= @setting.subtitle %></h2>
         <hr>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <%=
-        #@setting.description.html_safe
-        %>
+        <%= @setting.description.html_safe %>
       </div>
     </div>
   </div>
@@ -36,14 +28,12 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-xs-12">
-        <h2><%=
-         # @setting.section_title
-         %></h2>
+        <h2><%= @setting.section_title %></h2>
       </div>
     </div>
     <div class="row mt-3 text-center">
 
-      <% if @services %>
+      <% if !@services.nil? %>
         <% @services.each do |service| %>
           <div class="col-sm-6 col-md-3 item">
             <h2 class="service"><%= service.title %></h2>
@@ -60,14 +50,12 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-xs-12">
-        <h2><%=
-        #@setting.projects_title
-        %></h2>
+        <h2><%= @setting.projects_title %></h2>
         <hr>
       </div>
     </div>
     <div class="row mt-3">
-      <% if @posts %>
+      <% if !@posts.nil? %>
         <% @posts.each do |post| %>
 
             <div class="col-md-4">
