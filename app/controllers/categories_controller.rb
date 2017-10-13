@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     respond_to do |format|
       if @category.save(category_params)
-        format.html { redirect_to "/#{@category.slug}", notice: 'Post was successfully updated.' }
+        format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to "/#{@category.slug}", notice: 'Post was successfully updated.' }
+        format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
       else
         format.html { render :edit }
       end

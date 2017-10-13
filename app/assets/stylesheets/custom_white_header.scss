@@ -77,10 +77,23 @@ p {
         box-shadow: 0 8px 6px -6px #999;
 
     }
+    #logo-stripe, #logo-piece, #logo-ble-stripe {
+      display: none;
+    }
+  }
+  .navbar-brand img {
+    float: left;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 20px;
+    max-width: 200px;
+    height: auto;
   }
 }
 
 @media(min-width:768px) {
+
+
   p {
     margin: 0 0 20px;
     font-size: 14px;
@@ -197,8 +210,43 @@ a:focus {
   border-bottom: solid 1px #666;
   background: #EFEFEF;
 }
-
+@media (min-width:768px), (max-width:991px) {
+  #logo-stripe {
+    background: #ee3938;
+    position:absolute;
+    top:127px;
+    left:0px;
+    height:14px;
+    width:63%;
+  }
+  #logo-piece {
+    background: #ee3938;
+    position:absolute;
+    top:127px;
+    right:0px;
+    height:14px;
+    width:50px;
+  }
+  #logo-blue-stripe {
+    background: #00649b;
+    position: absolute;
+    top: 145px;
+    left:0px;
+    height:14px;
+    width: 100%;
+  }
+}
 @media(min-width:992px) {
+   #logo-stripe {
+    background: #ee3938;
+    position:absolute;
+    top:127px;
+    left:0px;
+    height:14px;
+    width:750px;
+  }
+
+
    #logo img {
           max-width: 240px;
           transition: max-width .5s ease-in-out,padding .5s ease-in-out;
@@ -264,7 +312,6 @@ a:focus {
     }
 
     .navbar-custom.top-nav-collapse {
-
         min-height: 72px;
         padding: 0px 0 5px 0;
         background: rgba(255,255,255,.9);
@@ -292,11 +339,32 @@ a:focus {
         .collapse ul {
           padding-top: 10px;
         }
-
     }
 
-
-
+  #logo-stripe {
+    background: #ee3938;
+    position:absolute;
+    top:127px;
+    left:150px;
+    height:14px;
+    width:100%;
+  }
+  #logo-piece {
+    background: #ee3938;
+    position:absolute;
+    top:127px;
+    left:0px;
+    height:14px;
+    width:50px;
+  }
+  #logo-blue-stripe {
+    background: #00649b;
+    position: absolute;
+    top: 145px;
+    left:0px;
+    height:14px;
+    width: 100%;
+  }
 
 }
 
@@ -509,28 +577,11 @@ body {
     border: none;
   }
 }
-// @media(max-width:767px) {
-//     .item {
-//     border-top: solid 1px #fff;
-//     border-bottom: solid 1px #fff;
-//     margin-bottom: 20px;
-//   }
-// }
-// @media(max-width:991px) {
-//   html {
-//     padding-top: 70px;
-//   }
-// }
-// @media(min-width:992px) {
-//   html {
-//     padding-top: 125px;
-//   }
-// }
-
-// .navbar-custom a {
-//   color: #000;
-// }
-
+@media(max-width:767px) {
+  #logo-stripe, #logo-piece, #logo-blue-stripe {
+    display: none;
+  }
+}
 .bg-1 {
 background: #666;
 color: white;
@@ -647,30 +698,31 @@ html.static_pages.home {
 .navbar {
   padding: 0;
 }
-#logo-stripe {
-  background: #ee3938;
-  position:absolute;
-  top:127px;
-  left:150px;
-  height:14px;
-  width:100%;
-}
-#logo-piece {
-  background: #ee3938;
-  position:absolute;
-  top:127px;
-  left:0px;
-  height:14px;
-  width:50px;
-}
-#logo-blue-stripe {
-  background: #00649b;
-  position: absolute;
-  top: 145px;
-  left:0px;
-  height:14px;
-  width: 100%;
-}
+
+// #logo-stripe {
+//   background: #ee3938;
+//   position:absolute;
+//   top:127px;
+//   left:150px;
+//   height:14px;
+//   width:100%;
+// }
+// #logo-piece {
+//   background: #ee3938;
+//   position:absolute;
+//   top:127px;
+//   left:0px;
+//   height:14px;
+//   width:50px;
+// }
+// #logo-blue-stripe {
+//   background: #00649b;
+//   position: absolute;
+//   top: 145px;
+//   left:0px;
+//   height:14px;
+//   width: 100%;
+// }
 .navbar-light .navbar-nav .nav-link {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
