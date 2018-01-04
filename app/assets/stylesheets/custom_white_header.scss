@@ -92,7 +92,10 @@ p {
 }
 
 @media(min-width:768px) {
-
+  .navbar-nav li a.dropdown-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 
   p {
     margin: 0 0 20px;
@@ -373,10 +376,7 @@ a:focus {
     max-width: 350px;
     transition: max-width .5s ease-in-out,padding .5s ease-in-out;
   }
-  .navbar-nav li a.dropdown-item {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
+
  .navbar-nav li a {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -742,4 +742,9 @@ html.static_pages.home {
     -moz-box-shadow:inset 0px 0px 0px 3px #00649b;
     box-shadow:inset 0px 0px 0px 3px #00649b;
   }
+}
+trix-editor {
+  min-height: 12rem;
+  max-height: 40rem;
+  overflow-y: auto;
 }
