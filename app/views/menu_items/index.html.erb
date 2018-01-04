@@ -10,25 +10,32 @@
 
 <div class="container m-t-20">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col">
 
       <p id="notice"><%= notice %></p>
-
 
 
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Html</th>
+            <th>ID</th>
+            <th>Label</th>
+            <th>Location</th>
+            <th>Link Type</th>
+            <th>Parent Menu Item</th>
             <th>Sort</th>
             <th colspan="3"></th>
           </tr>
         </thead>
 
         <tbody>
-          <% @menu_items.each do |menu_item| %>
+          <% @sorted_menu_items.each do |menu_item| %>
             <tr>
-              <td><%= menu_item.html %></td>
+              <td><%= menu_item.id %></td>
+              <td><%= menu_item.label %></td>
+              <td><%= menu_item.location %></td>
+              <td><%= menu_item.menu_item_type.name %></td>
+              <td><% if menu_item.parent %><%= menu_item.parent.label %><% end %></td>
               <td><%= menu_item.sort %></td>
               <td><%= link_to 'Show', menu_item %></td>
               <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>

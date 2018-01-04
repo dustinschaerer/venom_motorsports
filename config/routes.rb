@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  resources :menu_item_types
   resources :menu_items
   resources :services
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   root 'static_pages#home'
+  match '/about' => 'static_pages#about', via: :get
+  match '/swag-shop' => 'static_pages#swag_shop', via: :get
 
   resources :videos
 
@@ -19,12 +22,14 @@ Rails.application.routes.draw do
 
   resources :messages, except: [:update, :edit]
   resources :build_images
-  resources :settings, except: [:new, :create, :destroy, :show]
+  resources :settings
 
   match '/remove_home_image/:id' => 'settings#remove_home_image', as: :remove_home_image, via: [:post]
 
   resources :footers, except: [:new, :create, :destroy]
 
   resources :categories
+
+
 
 end

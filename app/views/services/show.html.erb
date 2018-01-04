@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @service.title %>
-</p>
+<div class="container-fluid bg-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="post-category"><%= @service.title %><% if current_admin_user %><%= link_to 'Edit', edit_service_path(@service), class: 'btn btn-default pull-right' %><% end %></h2>
+        <h5 class="post-subtitle"></h5>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @service.description %>
-</p>
+<div class="container m-t-20 m-b-20">
+  <div class="row">
+    <div class="col-md-8">
+      <br>
+     <div class="post-details">
+       <%= @service.description %>
+     </div>
+   </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-lg-12">
 
-<p>
-  <strong>Link text:</strong>
-  <%= @service.link_text %>
-</p>
-
-<p>
-  <strong>Link destination:</strong>
-  <%= @service.link_destination %>
-</p>
-
-<p>
-  <strong>Sort:</strong>
-  <%= @service.sort %>
-</p>
-
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+      <%= link_to "Create A New Service", new_service_path, class: 'btn btn-default' %>
+      |
+      <%= link_to 'Edit', edit_service_path(@service), class: 'btn btn-default' %> |
+      <%= link_to 'Back', services_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>

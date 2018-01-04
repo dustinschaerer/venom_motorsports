@@ -14,8 +14,18 @@
       <p id="notice"><%= notice %></p>
 
       <p>
-        <strong>Html:</strong>
-        <%= @menu_item.html %>
+        <strong>Menu Item Type:</strong>
+        <%= @menu_item.menu_item_type.name %>
+      </p>
+
+      <p>
+        <strong>Label:</strong>
+        <%= @menu_item.label %>
+      </p>
+
+      <p>
+        <strong>Location:</strong>
+        <%= @menu_item.location %>
       </p>
 
       <p>

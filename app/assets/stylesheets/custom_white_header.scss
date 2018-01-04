@@ -373,10 +373,15 @@ a:focus {
     max-width: 350px;
     transition: max-width .5s ease-in-out,padding .5s ease-in-out;
   }
+  .navbar-nav li a.dropdown-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
  .navbar-nav li a {
     padding-top: 40px;
     padding-bottom: 40px;
   }
+
 
 }
 

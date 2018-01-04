@@ -3,7 +3,10 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :html %>
+      <%= f.association :menu_item_type %>
+      <%= f.association :parent, label_method: :label, prompt: "Choose", label: "Dropdown Parent Link", include_blank: true %>
+      <%= f.input :label %>
+      <%= f.input :location %>
       <%= f.input :sort %>
     </div>
     <br ><br >

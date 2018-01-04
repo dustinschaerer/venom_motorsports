@@ -18,4 +18,12 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def about
+
+  end
+
+  def swag_shop
+
+  end
+
 end

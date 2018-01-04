@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118193924) do
+ActiveRecord::Schema.define(version: 20180104204103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,12 +120,26 @@ ActiveRecord::Schema.define(version: 20161118193924) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
-  create_table "menu_items", force: :cascade do |t|
+  create_table "menu_item_types", force: :cascade do |t|
+    t.string   "name"
     t.text     "html"
     t.integer  "sort"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "menu_items", force: :cascade do |t|
+    t.text     "html"
+    t.integer  "sort"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "label"
+    t.string   "location"
+    t.integer  "menu_item_type_id"
+    t.integer  "parent_id"
+  end
+
+  add_index "menu_items", ["menu_item_type_id"], name: "index_menu_items_on_menu_item_type_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.string   "email"
@@ -175,6 +189,7 @@ ActiveRecord::Schema.define(version: 20161118193924) do
     t.integer  "sort"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "slug"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -202,6 +217,7 @@ ActiveRecord::Schema.define(version: 20161118193924) do
   add_foreign_key "barn_finds", "admin_users"
   add_foreign_key "build_images", "posts"
   add_foreign_key "builds", "admin_users"
+  add_foreign_key "menu_items", "menu_item_types"
   add_foreign_key "posts", "admin_users"
   add_foreign_key "posts", "categories"
   add_foreign_key "videos", "posts"
