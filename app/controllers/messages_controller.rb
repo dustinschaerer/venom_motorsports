@@ -16,6 +16,9 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
+    setting = Setting.find(1)
+    @contact_page_title = setting.contact_page_title
+    @contact_page_text = setting.contact_page_text
   end
 
   # POST /messages

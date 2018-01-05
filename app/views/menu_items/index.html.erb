@@ -1,4 +1,4 @@
-<div class="container-fluid bg-1">
+<div class="container-fluid bg-1 mt-4">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
@@ -14,12 +14,11 @@
 
       <p id="notice"><%= notice %></p>
 
-
-      <table class="table table-striped">
-        <thead>
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
           <tr>
             <th>ID</th>
-            <th>Label</th>
+            <th>Link Text</th>
             <th>Location</th>
             <th>Link Type</th>
             <th>Parent Menu Item</th>
@@ -37,9 +36,9 @@
               <td><%= menu_item.menu_item_type.name %></td>
               <td><% if menu_item.parent %><%= menu_item.parent.label %><% end %></td>
               <td><%= menu_item.sort %></td>
-              <td><%= link_to 'Show', menu_item %></td>
-              <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>
-              <td><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show', menu_item, class: 'btn btn-sm btn-outline-secondary' %></td>
+              <td><%= link_to 'Edit', edit_menu_item_path(menu_item), class: 'btn btn-sm btn-outline-info' %></td>
+              <td><%= link_to 'Destroy', menu_item, class: 'btn btn-sm btn-outline-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
@@ -47,7 +46,9 @@
 
       <br>
       <br>
-      <%= link_to 'New Menu item', new_menu_item_path, class: 'btn btn-success' %>
+      <%= link_to new_menu_item_path, class: 'btn btn-outline-success' do %>
+        <i class="fa fa-plus-circle"></i> Create New Menu item
+      <% end %>
       <br>
       <br>
       <br>

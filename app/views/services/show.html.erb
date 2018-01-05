@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2 class="post-category"><%= @service.title %><% if current_admin_user %><%= link_to 'Edit', edit_service_path(@service), class: 'btn btn-default pull-right' %><% end %></h2>
+        <h2 class="post-category"><%= @service.title %></h2>
         <h5 class="post-subtitle"></h5>
       </div>
     </div>
@@ -21,13 +21,23 @@
    </div>
   </div>
   <hr />
-  <div class="row">
-    <div class="col-xs-12">
 
-      <%= link_to "Create A New Service", new_service_path, class: 'btn btn-default' %>
-      |
-      <%= link_to 'Edit', edit_service_path(@service), class: 'btn btn-default' %> |
-      <%= link_to 'Back', services_path, class: 'btn btn-default' %>
+  <% if current_admin_user %>
+    <div class="row">
+      <div class="col-xs-12">
+
+        <%= link_to new_service_path, class: 'btn btn-outline-success' do %>
+          <i class="fa fa-plus-circle"></i> Create A New Service
+        <% end %>
+
+        <%= link_to edit_service_path(@service), class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil"></i> Edit
+        <% end %>
+
+        <%= link_to '/manage', class: 'btn btn-outline-secondary' do %>
+          <i class="fa fa-cancel"></i> Cancel
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

@@ -1,35 +1,30 @@
 Rails.application.routes.draw do
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  root 'static_pages#home'
+
+  resources :categories
   resources :menu_item_types
   resources :menu_items
   resources :services
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
-  root 'static_pages#home'
-  match '/about' => 'static_pages#about', via: :get
-  match '/swag-shop' => 'static_pages#swag_shop', via: :get
-
   resources :videos
-
-  resources :parts, :path => "parts_list" do
-  end
-
-  match 'contact' => 'messages#new', via: :get
-  match 'manage' => 'static_pages#manage', via: :get
-
-  resources :posts, :path => "projects" do
-  end
-
   resources :messages, except: [:update, :edit]
   resources :build_images
   resources :settings
-
-  match '/remove_home_image/:id' => 'settings#remove_home_image', as: :remove_home_image, via: [:post]
-
   resources :footers, except: [:new, :create, :destroy]
+  resources :posts, :path => "projects" do
+  end
+  resources :parts, :path => "parts_list" do
+  end
 
-  resources :categories
-
-
+  match '/swag-shop' => 'static_pages#swag_shop', via: :get
+  match '/about' => 'static_pages#about', via: :get
+  match 'contact' => 'messages#new', via: :get
+  match 'manage' => 'static_pages#manage', via: :get
+  match '/remove_home_image/:id' => 'settings#remove_home_image', as: :remove_home_image, via: [:post]
+  match '/settings/:id/edit_about' => 'settings#edit_about', as: :edit_about, via: [:get]
+  match '/settings/:id/edit_contact' => 'settings#edit_contact', as: :edit_contact, via: [:get]
+  match '/settings/:id/edit_swag_shop' => 'settings#edit_swag_shop', as: :edit_swag_shop, via: [:get]
 
 end

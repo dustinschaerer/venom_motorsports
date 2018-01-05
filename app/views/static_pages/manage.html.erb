@@ -21,8 +21,8 @@
 
   <div class="container">
     <div class="row">
-      <div class="col mt-2">
-        <h2 class="post-category float-left">Site Administration Panel</h2>
+      <div class="col mt-2 mb-3">
+        <h2 class="post-category float-left">Admin Panel</h2>
         <%= link_to "Log out", destroy_admin_user_session_path, :method => :delete, class: 'float-right btn btn-danger mt-3' %>
         <br>
         <h5 class="post-subtitle">&nbsp;</h5>
@@ -31,128 +31,109 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container mt-5">
   <div class="row">
     <div class="col">
-      <div id="wrapper">
-
-        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <div class="navbar-collapse navbar-ex1-collapse" id="sidenav">
-            <ul class="nav navbar-nav side-nav">
-                <li>
-                    <a href="/admin/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="/admin/orders/"><i class="fa fa-fw fa-shopping-cart"></i> Orders</a>
-                </li>
-                <li>
-                    <a href="/admin/payments/"><i class="fa fa-fw fa-credit-card"></i> Payments</a>
-                </li>
-                <li>
-                    <a href="/admin/messages/"><i class="fa fa-fw fa-envelope"></i> Contact Messages</a>
-                </li>
-                <li>
-                    <a href="/admin/phone_ins/"><i class="fa fa-fw fa-phone"></i> Phone Ins</a>
-                </li>
-                <li>
-                    <a href="/admin/carts/"><i class="fa fa-fw fa-shopping-cart"></i> Shopping Carts</a>
-                </li>
-                <li>
-                    <a href="/admin/users/"><i class="fa fa-fw fa-user"></i> Users</a>
-                </li>
-                <li>
-                    <a href="/admin/user_groups/"><i class="fa fa-fw fa-users"></i><i class="fa fa-fw fa-users"></i> User Groups</a>
-                </li>
-                <li>
-                    <a href="/admin/guests/"><i class="fa fa-fw fa-user-secret"></i> Guests</a>
-                </li>
-                <li>
-                    <a href="/admin/email_messages"><i class="fa fa-fw fa-envelope"></i> Email Messages</a>
-                </li>
-                <li>
-                    <a href="/admin/sent_emails"><i class="fa fa-fw fa-archive"></i> Email History</a>
-                </li>
-                <li>
-                    <a href="/admin/sent_emails/new"><i class="fa fa-fw fa-clock-o"></i> Schedule Emails</a>
-                </li>
-                <li>
-                    <a href="/admin/reports"><i class="fa fa-fw fa-usd"></i> Reports</a>
-                </li>
-                <li>
-                    <a href="/admin/quotes/"><i class="fa fa-fw fa-tags"></i> Quotes</a>
-                </li>
-                <li>
-                    <a href="/admin/purchases/"><i class="fa fa-fw fa-credit-card"></i> Purchases</a>
-                </li>
-                <li>
-                    <a href="/admin/charts"><i class="fa fa-fw fa-area-chart"></i> Sales Charts</a>
-                </li>
-                <li>
-                    <a href="/admin/visits"><i class="fa fa-fw fa-line-chart"></i> Visits &amp; Pageviews</a>
-                </li>
-                <li>
-                    <a href="/admin/visitor_stats"><i class="fa fa-fw fa-pie-chart"></i> Visitor Stats</a>
-                </li>
-                <li>
-                    <a href="/admin/geocharts"><i class="fa fa-fw fa-map-marker"></i> Geo Charts - Visitors</a>
-                </li>
-                <li>
-                    <a href="/admin/inhouse_customers/"><i class="fa fa-fw fa-home"></i> Inhouse Customers</a>
-                </li>
-                <li>
-                    <a href="/admin/inhouse_groups/"><i class="fa fa-fw fa-home"></i> Inhouse Groups</a>
-                </li>
-
-                <li>
-                    <a href="/admin/admin_users/"><i class="fa fa-fw fa-bolt"></i> Administrators</a>
-                </li>
-
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+      <h5>Projects</h5>
+      <div class="mb-5">
+        <%= link_to new_post_path, class: 'btn btn-outline-success' do %>
+          <i class="fa fa-plus-circle"></i> New
+        <% end %>
+        <%= link_to posts_path, class: 'btn btn-outline-secondary' do %>
+          <i class="fa fa-search"></i> View All
+        <% end %>
+        <%= link_to services_path, class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil-square-o"></i> Edit
+        <% end %>
       </div>
 
+      <h5>Services</h5>
+      <div class="mb-5">
+        <%= link_to new_service_path, class: 'btn btn-outline-success' do %>
+          <i class="fa fa-plus-circle"></i> New
+        <% end %>
+        <%= link_to services_path, class: 'btn btn-outline-secondary' do %>
+          <i class="fa fa-search"></i> View All
+        <% end %>
+        <%= link_to services_path, class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil-square-o"></i> Edit
+        <% end %>
+      </div>
+
+
+      <h5>Categories</h5>
+      <div class="mb-5">
+        <%= link_to new_category_path, class: 'btn btn-outline-success' do %>
+          <i class="fa fa-plus-circle"></i> New
+        <% end %>
+        <%= link_to categories_path, class: 'btn btn-outline-secondary' do %>
+          <i class="fa fa-search"></i> View All
+        <% end %>
+        <%= link_to categories_path, class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil-square-o"></i> Edit
+        <% end %>
+      </div>
+      <h5>Videos</h5>
+      <div class="mb-5">
+        <%= link_to new_video_path, class: 'btn btn-outline-success' do %>
+          <i class="fa fa-plus-circle"></i> New
+        <% end %>
+        <%= link_to videos_path, class: 'btn btn-outline-secondary' do %>
+          <i class="fa fa-search"></i> View All
+        <% end %>
+        <%= link_to videos_path, class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil-square-o"></i> Edit
+        <% end %>
+      </div>
+    </div>
+    <div class="col">
+      <h5>Contact Messages</h5>
+      <div class="mb-5">
+        <%= link_to messages_path, class: 'btn btn-outline-secondary' do %>
+          <i class="fa fa-search"></i> View All
+        <% end %>
+      </div>
+      <h5>Edit Content</h5>
+      <div class="mb-4">
+        <%= link_to '/menu_items', class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil-square-o"></i> Navigation Menu
+        <% end %>
+      </div>
+      <div class="mb-4">
+        <%= link_to '/settings/1/edit', class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil-square-o"></i> Home Page
+        <% end %>
+      </div>
+      <div class="mb-4">
+        <%= link_to '/settings/1/edit_about', class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil-square-o"></i> About Page
+        <% end %>
+      </div>
+      <div class="mb-4">
+        <%= link_to '/settings/1/edit_swag_shop', class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil-square-o"></i> Swag Shop Page
+        <% end %>
+      </div>
+      <div class="mb-4">
+        <%= link_to '/settings/1/edit_contact', class: 'btn btn-outline-info' do %>
+          <i class="fa fa-pencil-square-o"></i> Contact Page
+        <% end %>
+      </div>
+
+
+
     </div>
   </div>
 </div>
 
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 
 
 
 
-<div class="container">
-
-
-  <div class="row">
-    <div class="col">
-      Pages
-    </div>
-
-    <div class="col">
-      Pages
-    </div>
-
-
-    <div class="col">
-      <p><%= link_to 'Edit Home Page HTML', '/settings/1/edit', class: 'btn btn-info' %></p>
-      <p><%= link_to 'Edit Navigation Menu Items', '/menu_items', class: 'btn btn-info' %></p>
-      <p><%= link_to 'Edit Services HTML', '/services', class: 'btn btn-info' %></p>
-      <p><%= link_to 'Edit Footer HTML', '/footers/1/edit', class: 'btn btn-info' %></p>
-      <p><%= link_to 'View Contact Form Messages', messages_path, class: 'btn btn-warning' %></p>
-      <p><%= link_to 'View Videos', videos_path, class: 'btn btn-warning' %></p
-      <p></p>
-    </div>
-    <div class="col">
-      <p><%= link_to 'Create New Project', new_post_path, class: 'btn btn-success' %></p>
-      <p><%= link_to 'View All Projects', posts_path, class: 'btn btn-warning' %></p>
-      <p><%= link_to 'Create New Category', new_category_path, class: 'btn btn-success' %></p>
-      <p><%= link_to 'View All Categories', categories_path, class: 'btn btn-warning' %></p>
-      <p><%= link_to 'Create New Part', new_part_path, class: 'btn btn-success' %></p>
-      <p><%= link_to 'View All Parts', parts_path, class: 'btn btn-warning' %></p>
-      <p></p>
-    </div>
-  </div>
-</div>
 
 <div class="container-fluid-bg services">
   <div class="container">

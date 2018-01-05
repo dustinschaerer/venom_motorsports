@@ -6,31 +6,31 @@
       <fieldset class="col-xs-12">
       <%= f.label :image, "Home Page Main Image" %>
       <% if f.object.home_image? %>
-      <%= image_tag(f.object.home_image, class: "img-responsive main_image") %>
-      <%= link_to "Remove Photo", remove_home_image_path(@setting),  method: :post, class: 'inline btn btn-danger btn-block remove-main-image-btn m-l-2' %>
+      <%= image_tag(f.object.home_image, class: "img-fluid main_image") %>
+      <%= link_to "Remove Photo", remove_home_image_path(@setting),  method: :post, class: 'inline btn btn-danger btn-block remove-main-image-btn mt-1 mb-2' %>
       <% else %>
         <br>Please upload an image for the home page.<br><br>
       <% end %>
-      <%= f.input :home_image, as: :file, label: "Upload File" %>
+      <%= f.input :home_image, as: :file, label: "Upload Image: " %>
       </fieldset>
 
 
       <br>
-      <%= f.input :title %>
+      <%= f.input :title, label: "Home Page Title" %>
       <br>
-      <%= f.input :subtitle %>
+      <%= f.input :subtitle, label: "Home Page Subtitle" %>
       <br>
-      <%= f.label :description %>
+      <%= f.label :description, "Home Page Description" %>
       <%= f.trix_editor :description %>
       <br>
-      <%= f.input :section_title %>
+      <%= f.input :section_title, label: "Home Page Services Title" %>
       <br>
-      <%= f.input :projects_title %>
+      <%= f.input :projects_title, label: "Home Page Project Title" %>
       <br>
     </div>
     <div class="form-actions">
-      <%= f.button :submit, class: 'btn btn-success' %>
-      <%= link_to 'Back to Admin Manager', '/manage', class: 'btn btn-danger pull-right' %>
+      <%= f.button :submit, "Save", class: 'btn btn-danger' %>
+      <%= link_to 'Cancel', '/manage', class: 'btn btn-outline-secondary pull-right' %>
     </div>
   <% end %>
 </div>

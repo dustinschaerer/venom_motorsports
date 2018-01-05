@@ -19,11 +19,15 @@ class StaticPagesController < ApplicationController
   end
 
   def about
-
+    setting = Setting.find(1)
+    @about_page_title = setting.about_page_title
+    @about_page_text = setting.about_page_text
   end
 
   def swag_shop
-
+    setting = Setting.find(1)
+    @shop_page_title = setting.shop_page_title
+    @shop_page_text = setting.shop_age_text
   end
 
 end

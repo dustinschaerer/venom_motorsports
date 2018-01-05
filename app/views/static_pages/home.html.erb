@@ -37,8 +37,8 @@
         <% @services.each do |service| %>
           <div class="col-sm-6 col-md-3 item">
             <h2 class="service"><%= service.title %></h2>
-            <div class="service-text"><%= service.description %></div>
-            <%= link_to "#{service.link_text}", "#{service.link_destination}", class: "btn btn-white-outline" %>
+            <div class="service-text"><%= service.description.html_safe %></div>
+            <%= link_to "#{service.link_text}", "/services/#{service.link_destination}", class: "btn btn-white-outline" %>
           </div>
         <% end %>
       <% end %>

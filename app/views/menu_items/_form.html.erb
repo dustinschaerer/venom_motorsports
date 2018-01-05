@@ -1,4 +1,4 @@
-<div class="container m-b-20">
+<div class="col-lg-8 m-b-20">
   <%= simple_form_for(@menu_item) do |f| %>
     <%= f.error_notification %>
 
@@ -11,7 +11,7 @@
     </div>
     <br ><br >
     <div class="form-actions">
-      <%= f.button :submit, class: 'btn btn-success' %>
+      <%= f.button :submit, class: 'btn btn-outline-success' %>
       <%= link_to 'Back / Cancel', menu_items_path, class: 'btn btn-danger pull-right' %>
     </div>
     <br ><br >

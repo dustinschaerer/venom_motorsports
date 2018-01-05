@@ -1,7 +1,7 @@
 class SettingsController < ApplicationController
 
   before_action :authenticate_admin_user!
-  before_action :set_setting, only: [:show, :edit, :update, :destroy, :remove_home_image]
+  before_action :set_setting, only: [:show, :edit, :edit_about, :edit_contact, :edit_swag_shop, :update, :destroy, :remove_home_image]
 
   def index
     redirect_to '/settings/1/edit'
@@ -54,7 +54,8 @@ class SettingsController < ApplicationController
 
     def setting_params
       params.require(:setting).permit(:title, :subtitle, :description, :section_title, :projects_title,
-        :main_image_url, :home_image, :remove_home_image)
+        :main_image_url, :home_image, :remove_home_image, :contact_page_title, :contact_page_text,
+        :about_page_title, :about_page_text, :shop_page_title, :shop_page_text )
     end
 end
 
