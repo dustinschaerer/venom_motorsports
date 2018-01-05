@@ -1,0 +1,12 @@
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href='<%= mi.location %>' id="navbarDropdown<%= mi.id %>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%= mi.label %>
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown<%= mi.id %>">
+    <% if mi.children %>
+      <% mi.children.order(sort: :asc).each do |child| %>
+        <%= render partial: "layouts/menu_dropdown_item", locals: {child: child, mi: mi} %>
+      <% end %>
+    <% end %>
+  </div>
+</li>
