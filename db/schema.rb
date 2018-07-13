@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105190824) do
+ActiveRecord::Schema.define(version: 20180713180533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,9 +70,11 @@ ActiveRecord::Schema.define(version: 20180105190824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "post_id"
+    t.integer  "service_id"
   end
 
   add_index "build_images", ["post_id"], name: "index_build_images_on_post_id", using: :btree
+  add_index "build_images", ["service_id"], name: "index_build_images_on_service_id", using: :btree
 
   create_table "builds", force: :cascade do |t|
     t.string   "title"
@@ -187,10 +189,21 @@ ActiveRecord::Schema.define(version: 20180105190824) do
     t.string   "link_text"
     t.string   "link_destination"
     t.integer  "sort"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "slug"
+    t.text     "content"
+    t.text     "teaser"
+    t.string   "article_image"
+    t.date     "published_on"
+    t.boolean  "published",        default: false, null: false
+    t.integer  "category_id"
+    t.integer  "admin_user_id"
+    t.text     "specs"
   end
+
+  add_index "services", ["admin_user_id"], name: "index_services_on_admin_user_id", using: :btree
+  add_index "services", ["category_id"], name: "index_services_on_category_id", using: :btree
 
   create_table "settings", force: :cascade do |t|
     t.text     "title"
@@ -220,15 +233,21 @@ ActiveRecord::Schema.define(version: 20180105190824) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "service_id"
   end
 
   add_index "videos", ["post_id"], name: "index_videos_on_post_id", using: :btree
+  add_index "videos", ["service_id"], name: "index_videos_on_service_id", using: :btree
 
   add_foreign_key "barn_finds", "admin_users"
   add_foreign_key "build_images", "posts"
+  add_foreign_key "build_images", "services"
   add_foreign_key "builds", "admin_users"
   add_foreign_key "menu_items", "menu_item_types"
   add_foreign_key "posts", "admin_users"
   add_foreign_key "posts", "categories"
+  add_foreign_key "services", "admin_users"
+  add_foreign_key "services", "categories"
   add_foreign_key "videos", "posts"
+  add_foreign_key "videos", "services"
 end

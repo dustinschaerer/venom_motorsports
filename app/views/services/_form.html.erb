@@ -1,18 +1,59 @@
-<div class="container m-b-20">
-  <%= simple_form_for(@service) do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%= f.input :title %>
-      <%= f.label :description, "Description" %>
-      <%= f.trix_editor :description %>
-      <%= f.input :slug %>
-      <%= f.input :link_text %>
-      <%= f.input :link_destination %>
-      <%= f.input :sort %>
+<%= simple_form_for(@service, :html => { :multipart => true }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :category %>
+    <%= f.input :title %>
+    <div class="well">
+      <%= f.label :article_image, "Current Image" %>
+      <%= image_tag(@service.article_image_url, class: "img-responsive img-thumbnail") if @service.article_image? %>
+
+      <div class="field">
+        <%= f.input :article_image, as: :file, label: "Choose Article Image" %>
+      </div>
+      <%= f.hidden_field :article_image_cache %>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, "Save", class: "btn btn-danger" %>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= link_to 'Cancel', services_path, class: "btn btn-outline-secondary" %>
+    <%= f.label :content, "Content" %>
+    <%= f.trix_editor :content %>
+    <br>
+    <%= f.label :teaser, "Teaser Content" %>
+    <%= f.trix_editor :teaser %>
+    <br>
+    <%= f.label :specs, "Project Specs" %>
+    <%= f.trix_editor :specs %>
+    <br>
+    <div class="well">
+      <h4>Carousel Images</h4>
+      <div class="row">
+
+        <%= f.simple_fields_for :build_images do |builder| %>
+          <%= render 'build_image_fields', f: builder %>
+        <% end %>
+        <%= link_to_add_fields "Add Image Uploader", f, :build_images %>
+      </div>
     </div>
-  <% end %>
-</div>
+    <br>
+    <div class="well">
+      <h4>Related Parts</h4>
+      <div class="row choose_parts">
+        <% Part.all.each do |part| -%>
+          <div class="col-md-6 col-lg-3">
+            <%= hidden_field_tag "post[part_ids][]", nil %>
+            <%= check_box_tag "post[part_ids][]", part.id, @service.part_ids.include?(part.id), id: dom_id(part) -%>
+            <%= label_tag dom_id(part), part.name %><br>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <%= f.input :slug %>
+    <%= f.input :published_on %>
+    <%= f.input :published %>
+    <%= f.association :admin_user, collection: AdminUser.all, label_method: :email, value_method: :id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save", class: "btn btn-danger" %>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to 'Cancel', services_path, class: "btn btn-outline-secondary" %>
+  </div>
+  <br>
+<% end %>

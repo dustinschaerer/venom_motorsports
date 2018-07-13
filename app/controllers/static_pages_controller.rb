@@ -27,7 +27,7 @@ class StaticPagesController < ApplicationController
   def swag_shop
     setting = Setting.find(1)
     @shop_page_title = setting.shop_page_title
-    @shop_page_text = setting.shop_age_text
+    @shop_page_text = setting.shop_page_text
   end
 
 end
