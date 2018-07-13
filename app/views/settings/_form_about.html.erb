@@ -1,0 +1,17 @@
+<div class="container">
+  <%= simple_form_for(@setting, :html => { multipart: true }) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs my-4">
+
+      <%= f.input :about_page_title %>
+      <br>
+
+      <%= f.label :about_page_text %>
+      <%= f.trix_editor :about_page_text %>
+    </div>
+    <div class="form-actions my-4">
+      <%= f.button :submit, "Save", class: 'btn btn-danger' %>
+      <%= link_to 'Cancel', '/manage', class: 'btn btn-outline-secondary pull-right' %>
+    </div>
+  <% end %>
+</div>
