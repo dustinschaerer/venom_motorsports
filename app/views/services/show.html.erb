@@ -1,43 +1,127 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid bg-1">
+<div class="container-fluid post-header">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2 class="post-category"><%= @service.title %></h2>
-        <h5 class="post-subtitle"></h5>
+        <h2 class="post-category"><%= @service.category.name %></h2>
+        <h5 class="post-subtitle"><%= @service.title %></h5>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container m-t-20 m-b-20">
+<div class="container m-t-20">
   <div class="row">
-    <div class="col-xs-12">
-      <br>
-     <div class="">
-       <%= @service.description.html_safe %>
-     </div>
-   </div>
-  </div>
-  <hr />
+    <div class="col-lg-8">
+      <article>
 
-  <% if current_admin_user %>
-    <div class="row">
-      <div class="col-xs-12">
+        <div class="post-main-image">
+          <%= image_tag @service.article_image.to_s, class: "img-thumbnail img-responsive" %>
+        </div>
 
-        <%= link_to new_service_path, class: 'btn btn-outline-success' do %>
-          <i class="fa fa-plus-circle"></i> Create A New Service
+        <div class="post-details">
+          <% if @service.admin_user %>
+          By: <%= @service.admin_user.email %> /
+          <% end %>
+          <span class="glyphicon glyphicon-time"></span> <%= @service.published_on.strftime("%B %d, %Y") %> /
+          <%= link_to @service.category.name, category_path(@service.category) %>
+        </div>
+
+        <h1 class="post-title"><%= @service.title %></h1>
+        <div class="post-attributes"></div>
+
+
+        <div class="post-content">
+          <%= @service.content.html_safe %>
+        </div>
+
+        <% if @service_images.size > 0  %>
+          <h4 class="post-gallery">Service Photo Gallery</h4>
+
+          <div id="links" class="row">
+
+            <% @service_images.each_with_index do |service_image, i| %>
+              <div class="col-xs-3 col-sm-2 no-gutters">
+
+                <%= link_to image_tag(service_image.image, class: "img-responsive img-thumbnail"), asset_path(service_image.image), data: {gallery: "gallery"}, title: ""  %>
+              </div>
+            <% end %>
+          </div>
+
+
         <% end %>
+      </article>
+      <br><br>
 
-        <%= link_to edit_service_path(@service), class: 'btn btn-outline-info' do %>
-          <i class="fa fa-pencil"></i> Edit
-        <% end %>
+      <%= link_to 'Edit', edit_service_path(@service), class: "btn btn-warning" %> |
+      <%= link_to 'Back', services_path, class: "btn btn-info" %>
+      <br /><br />
+    </div>
 
-        <%= link_to '/manage', class: 'btn btn-outline-secondary' do %>
-          <i class="fa fa-cancel"></i> Cancel
-        <% end %>
+    <div class="col-lg-4">
+       <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Service Specs</h3>
+        </div>
+        <div class="panel-body">
+          <%= @service.specs? ? @service.specs.html_safe : "No specs for this project" %>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Videos</h3>
+        </div>
+        <div class="panel-body">
+          <% @videos.each do |video| %>
+            <iframe width="100%" height="auto" src="<%= video.url %>" frameborder="0" class="thumbnail" allowfullscreen></iframe>
+          <% end %>
+          <hr>
+          Check out our <a href="http://youtube.com">You Tube Channel</a> for all our videos.
+        </div>
       </div>
     </div>
-  <% end %>
+  </div>
 </div>
+<br>
+<br>
+
+
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
