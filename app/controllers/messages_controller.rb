@@ -16,6 +16,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
+
     setting = Setting.find(1)
     @contact_page_title = setting.contact_page_title
     @contact_page_text = setting.contact_page_text
@@ -28,6 +29,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        ContactForm.message_received(@message).deliver
         format.html { redirect_to root_path, notice: 'Your contact message has been sent.' }
         format.json { render action: 'show', status: :created, location: @message }
       else
