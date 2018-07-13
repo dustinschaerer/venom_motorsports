@@ -85,3 +85,44 @@
     </div>
   </div>
 </div>
+
+
+<div class="container recent">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <h2>Services We Offer</h2>
+        <hr>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <% if !@services.nil? %>
+        <% @services.each do |service| %>
+
+            <div class="col-md-4">
+              <%= image_tag service.article_image, class: "img-responsive img-thumbnail mb-3" %>
+            </div>
+            <div class="col-md-8">
+              <h2 class="project-title"><%= link_to service.title, service_path(service), class: "project-title" %></h2>
+              <div class="service-details">
+                <span class="glyphicon glyphicon-time"></span>
+                <% if service.published_on %>
+                  <%= service.published_on.strftime("%B %d, %Y") %>
+                   /
+                <% end %>
+                <%= link_to service.category.name, category_path(service.category) %>
+              </div>
+              <%= service.teaser.html_safe %>
+              <br>
+              <%= link_to 'Read More', service_path(service), class: "btn btn-info" %> |
+              <%= link_to 'Edit', edit_service_path(service), class: "btn btn-warning" %> |
+              <%= link_to 'Destroy', service_path(service), method: :destroy, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+              <br>
+            </div>
+          <hr />
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

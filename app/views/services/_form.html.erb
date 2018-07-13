@@ -33,18 +33,7 @@
       </div>
     </div>
     <br>
-    <div class="well">
-      <h4>Related Parts</h4>
-      <div class="row choose_parts">
-        <% Part.all.each do |part| -%>
-          <div class="col-md-6 col-lg-3">
-            <%= hidden_field_tag "post[part_ids][]", nil %>
-            <%= check_box_tag "post[part_ids][]", part.id, @service.part_ids.include?(part.id), id: dom_id(part) -%>
-            <%= label_tag dom_id(part), part.name %><br>
-          </div>
-        <% end %>
-      </div>
-    </div>
+
     <%= f.input :slug %>
     <%= f.input :published_on %>
     <%= f.input :published %>
