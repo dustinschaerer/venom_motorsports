@@ -64,7 +64,7 @@ group :development do
   gem 'binding_of_caller'
 end
 
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '~> 4.1.2'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'

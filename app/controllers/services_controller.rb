@@ -1,6 +1,5 @@
 class ServicesController < InheritedResources::Base
-
-  before_action :authenticate_admin_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_admin_user!, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
   def index

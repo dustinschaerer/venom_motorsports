@@ -51,13 +51,16 @@
         <% end %>
       </article>
       <br><br>
-
-      <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning" %> |
-      <%= link_to 'Back', posts_path, class: "btn btn-info" %>
-      <br /><br />
+      <% if current_admin_user %>
+        <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning" %> |
+        <%= link_to 'Back', posts_path, class: "btn btn-info" %>
+        <br /><br />
+      <% end %>
     </div>
 
     <div class="col-lg-4">
+
+      <% if @post.specs %>
        <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Project Specs</h3>
@@ -66,8 +69,10 @@
           <%= @post.specs? ? @post.specs.html_safe : "No specs for this project" %>
         </div>
       </div>
+      <% end %>
 
       <div class="panel panel-default">
+        <!--
         <div class="panel-heading">
           <h3 class="panel-title">Available Parts</h3>
         </div>
@@ -82,8 +87,10 @@
           </ul>
           <% end %>
         </div>
+      -->
       </div>
 
+     <% if @videos %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Videos</h3>
@@ -96,9 +103,7 @@
           Check out our <a href="http://youtube.com">You Tube Channel</a> for all our videos.
         </div>
       </div>
-
-
-
+      <% end %>
 
     </div>
   </div>

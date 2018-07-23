@@ -22,5 +22,9 @@ module Newhistorics
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.authentication_method = :authenticate_admin_user!
+    config.current_user_method = :current_admin_user
+
   end
 end

@@ -29,8 +29,5 @@ $(document).ready collapseNavbar
 #     event.preventDefault()
 #     return
 #   return
+
 # Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click ->
-  if $(this).attr('class') != 'dropdown-toggle active' and $(this).attr('class') != 'dropdown-toggle'
-    $('.navbar-toggle:visible').click()
-  return

@@ -1,26 +1,64 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#"><%= image_tag 'venom_logo_v1.png' %></a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: 20px;">
-    <ul class="navbar-nav mr-auto">
-    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <%= image_tag 'venom_logo_v1.png' %>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: 20px;">
+      <ul class="navbar-nav mr-auto">
+      </ul>
 
-    <ul class="navbar-nav">
-      <% if current_admin_user %>
-        <li class="nav-item"><a class="nav-link" href="/manage">Admin</a></li>
-      <% end %>
+      <ul class="navbar-nav">
+        <% if current_admin_user %>
+          <li class="nav-item"><a class="nav-link" href="/manage">Admin</a></li>
+        <% end %>
 
-      <% if @menu_items %>
-        <% @menu_items.each do |mi| %>
-          <% if mi.menu_item_type_id == 1 %>
-            <%= render partial: "layouts/menu_top_level_link", locals: {mi: mi} %>
-          <% elsif mi.menu_item_type.id == 2 %>
-            <%= render partial: "layouts/menu_dropdown_link", locals: {mi: mi} %>
+        <% if @menu_items %>
+          <% @menu_items.each do |mi| %>
+            <% if mi.menu_item_type_id == 1 %>
+              <%= render partial: "layouts/menu_top_level_link", locals: {mi: mi} %>
+            <% elsif mi.menu_item_type.id == 2 %>
+              <%= render partial: "layouts/menu_dropdown_link", locals: {mi: mi} %>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
+</nav>
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <%= image_tag 'venom_logo_v1.png' %>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: 20px;">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+
+      <ul class="navbar-nav">
+        <% if current_admin_user %>
+          <li class="nav-item"><a class="nav-link" href="/manage">Admin</a></li>
+        <% end %>
+
+        <% if @menu_items %>
+          <% @menu_items.each do |mi| %>
+            <% if mi.menu_item_type_id == 1 %>
+              <%= render partial: "layouts/menu_top_level_link", locals: {mi: mi} %>
+            <% elsif mi.menu_item_type.id == 2 %>
+              <%= render partial: "layouts/menu_dropdown_link", locals: {mi: mi} %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>
+ -->

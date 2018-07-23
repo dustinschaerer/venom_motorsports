@@ -53,13 +53,15 @@
         <% end %>
       </article>
       <br><br>
-
-      <%= link_to 'Edit', edit_service_path(@service), class: "btn btn-warning" %> |
-      <%= link_to 'Back', services_path, class: "btn btn-info" %>
-      <br /><br />
+      <% if current_admin_user %>
+        <%= link_to 'Edit', edit_service_path(@service), class: "btn btn-warning" %> |
+        <%= link_to 'Back', services_path, class: "btn btn-info" %>
+        <br /><br />
+      <% end %>
     </div>
 
     <div class="col-lg-4">
+      <% if @service.specs %>
        <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Service Specs</h3>
@@ -68,7 +70,9 @@
           <%= @service.specs? ? @service.specs.html_safe : "No specs for this project" %>
         </div>
       </div>
+      <% end %>
 
+      <% if @videos %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Videos</h3>
@@ -81,6 +85,7 @@
           Check out our <a href="http://youtube.com">You Tube Channel</a> for all our videos.
         </div>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

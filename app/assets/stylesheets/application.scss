@@ -17,7 +17,6 @@
 @import "bootstrap";
 
 // @import "bootstrap_custom";
-@import "barn_finds";
 @import "categories";
 @import "posts";
 @import "static_pages";
@@ -31,3 +30,18 @@
 // @import "bootstrap-image-gallery";
 // @import "blueimp-gallery-indicator";
 // @import "blueimp-gallery-video";
+
+
+
+
+
+
+
+
+
+
+trix-editor {
+  min-height: 12rem;
+  max-height: 40rem;
+  overflow-y: auto;
+}
