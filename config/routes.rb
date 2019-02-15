@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :products
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'static_pages#home'
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   resources :parts, :path => "parts_list" do
   end
 
-  match '/swag-shop' => 'static_pages#swag_shop', via: :get
+  match '/shop' => 'static_pages#shop', via: :get
   match '/about' => 'static_pages#about', via: :get
   match 'contact' => 'messages#new', via: :get
   match 'manage' => 'static_pages#manage', via: :get

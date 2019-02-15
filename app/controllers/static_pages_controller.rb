@@ -24,10 +24,11 @@ class StaticPagesController < ApplicationController
     @about_page_text = setting.about_page_text
   end
 
-  def swag_shop
+  def shop
     setting = Setting.find(1)
     @shop_page_title = setting.shop_page_title
     @shop_page_text = setting.shop_page_text
+    @products = Product.all
   end
 
 end
