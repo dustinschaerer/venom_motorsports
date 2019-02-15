@@ -73,6 +73,16 @@
           <i class="fa fa-pencil-square-o"></i> Edit
         <% end %>
       </div>
+      <h5>Products</h5>
+      <div class="mb-5">
+        <%= link_to new_product_path, class: 'btn btn-outline-success' do %>
+          <i class="fa fa-plus-circle"></i> New
+        <% end %>
+        <%= link_to products_path, class: 'btn btn-outline-secondary' do %>
+          <i class="fa fa-search"></i> View All
+        <% end %>
+      </div>
+
       <h5>Videos</h5>
       <div class="mb-5">
         <%= link_to new_video_path, class: 'btn btn-outline-success' do %>
