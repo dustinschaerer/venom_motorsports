@@ -1,3 +1,6 @@
+ /* Original cxustom white header */
+
+
 /*!
  * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -217,16 +220,23 @@ a:focus {
   #logo-stripe {
     background: #ee3938;
     position:absolute;
-    top:208px;
+    top:127px;
     left:0px;
-    height:13px;
+    height:14px;
     width:63%;
   }
-
+  #logo-piece {
+    background: #ee3938;
+    position:absolute;
+    top:127px;
+    right:0px;
+    height:14px;
+    width:50px;
+  }
   #logo-blue-stripe {
     background: #00649b;
     position: absolute;
-    top: 225px;
+    top: 145px;
     left:0px;
     height:14px;
     width: 100%;
@@ -236,7 +246,7 @@ a:focus {
    #logo-stripe {
     background: #ee3938;
     position:absolute;
-    top:208px;
+    top:127px;
     left:0px;
     height:14px;
     width:750px;
@@ -340,15 +350,23 @@ a:focus {
   #logo-stripe {
     background: #ee3938;
     position:absolute;
-    top:218px;
-    height:13px;
+    top:127px;
+    left:150px;
+    height:14px;
     width:100%;
   }
-
+  #logo-piece {
+    background: #ee3938;
+    position:absolute;
+    top:127px;
+    left:0px;
+    height:14px;
+    width:50px;
+  }
   #logo-blue-stripe {
     background: #00649b;
     position: absolute;
-    top: 231px;
+    top: 145px;
     left:0px;
     height:14px;
     width: 100%;
@@ -571,6 +589,14 @@ html.static_pages.home {
 
 
 
+
+
+
+
+
+
+
+
 @media (max-width: 992px) {
   .navbar-header {
       float: none;
@@ -590,7 +616,7 @@ html.static_pages.home {
       border-width: 0 0 1px;
   }
   .navbar-collapse.collapse {
-  //    display: none!important;
+      display: none!important;
   }
   .navbar-nav {
       float: none!important;
@@ -606,15 +632,7 @@ html.static_pages.home {
   .collapse.in{
       display:block !important;
   }
-
 }
-
-
-
-
-
-
-
 
 @media(max-width: 800px) {
 
@@ -670,7 +688,7 @@ html.static_pages.home {
   padding: 0;
 }
 
-/* link colors */
+
 .navbar-light .navbar-nav .nav-link {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -685,25 +703,4 @@ html.static_pages.home {
     -moz-box-shadow:inset 0px 0px 0px 3px #00649b;
     box-shadow:inset 0px 0px 0px 3px #00649b;
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 992px) {
-  .navbar-light .navbar-nav .nav-link {
-    padding-left: 25px;
-  }
-}
-
-.navbar-toggler:not(:disabled):not(.disabled) {
-  margin-left: 20px;
 }

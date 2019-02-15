@@ -5,8 +5,27 @@
 
   <%= link_to 'New Product', new_product_path %>
 
+  <div class="row">
+    <% @products.each do |product| %>
 
+      <div class="col-sm-6 col-md-4 mt-5">
+        <div class="product">
+          <%= image_tag(product.product_image.url, class: "img-responsive" ) %>
+          <br>
+          <%= product.name %>
+          <br>
+          By: <%= product.manufacturer %>
+          <br><br>
+          <%= number_to_currency(product.price) %>
+          <br><br>
+          <%= product.paypal_button.html_safe %>
 
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if current_admin_user %>
     <div class="row">
       <div class="col-sm-2">
         Image
@@ -15,7 +34,7 @@
         Name
       </div>
       <div class="col-sm-2">
-        Description
+        PayPal Button
       </div>
       <div class="col-sm-2">
         Manufacturer
@@ -30,18 +49,16 @@
       </div>
     </div>
 
-    
-
   <% @products.each do |product| %>
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-2">TT
         <%= image_tag(product.product_image.url, class: "img-responsive" ) %>
       </div>
       <div class="col-sm-2">
         <%= product.name %>
       </div>
       <div class="col-sm-2">
-        <%= product.description %>
+      <%= product.paypal_button.html_safe %>
       </div>
       <div class="col-sm-2">
         <%= product.manufacturer %>
@@ -56,8 +73,13 @@
         <%= link_to "Show", product_path(product) %>
         <%= link_to "Edit", edit_product_path(product) %>
         <%= link_to "Delete", product_path(product), method: :delete %>
-
       </div>
     </div>
 
   <% end %>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+</div>
